@@ -1,0 +1,1158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Single course</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script>
+        tailwind.config = {
+  theme: {
+    extend: {
+      fontFamily: {
+        'poppins': ['Poppins', 'sans-serif'],
+        'raleway': ['Raleway', 'sans-serif'],
+        'roboto': ['Roboto', 'sans-serif'],
+        'mochiy': ['Mochiy Pop One', 'sans-serif'],
+      },
+      fontWeight: {
+        'poppins-100': 100,
+        'poppins-200': 200,
+        'poppins-300': 300,
+        'poppins-400': 400,
+        'poppins-500': 500,
+        'poppins-600': 600,
+        'poppins-700': 700,
+        'poppins-800': 800,
+        'poppins-900': 900,
+
+        'raleway-100':100,
+        'raleway-200':200,
+        'raleway-300':300,
+        'raleway-400':400,
+        'raleway-500':500,
+        'raleway-600':600,
+        'raleway-700':700,
+        'raleway-800':800,
+        'raleway-900':900,
+
+
+        'roboto-100': 100,
+        'roboto-300': 300,
+        'roboto-400': 400,
+        'roboto-500': 500,
+        'roboto-700': 700,
+        'roboto-900': 900,
+      },
+      colors: {
+        primary: '#9f6496',
+        secondary:'#6265ab',
+        terirory:'#e6e4e4'
+      }
+    }
+  }
+}
+    </script>
+    <!-- <link rel="stylesheet" href="input.css"> -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Raleway', sans-serif;
+            overflow-x: hidden;
+        }
+        .nav-menu {
+            transform: translateX(-100%);
+            transition: transform 0.3s ease-in-out;
+        }
+        .nav-menu.active {
+            transform: translateX(0);
+        }
+        .dot, .dot-expert, .dot-testimonial {
+      width: 10px;
+      height: 10px;
+      border-radius: 100%;
+      border: 1px solid rgb(66, 66, 66);
+      background-color: white; /* Gray-300 */
+      display: inline-block;
+      margin: 0 4px;
+      cursor: pointer;
+      transition: width 0.3s ease; /* Add transition for smooth effect */
+    }
+
+    .dot-testimonial{
+      border: 0.5px solid #9f6496;
+      background-color: #9f6496;
+    }
+
+    .dot.active, .dot-expert.active{
+      width: 80px; /* Make the active dot wider */
+      background-color: #000000;
+      border-radius: 20px; /* Darker color for active dot */
+    }
+    </style>
+</head>
+
+<body>
+
+    <header class="bg-white py-4 px-6"> <!-- Container for the entire header - white background, padding -->
+        <div class="container mx-auto flex justify-between items-center"> <!-- Container to center content, flexbox for layout, center alignment -->
+      
+          <!-- Logo Area -->
+          <div class="flex items-center"> <!-- Flex to align logo and text horizontally -->
+            <img src="./assets/Logo.png" alt="Avanzo Academy Logo" class="h-20 w-48"> <!-- Logo image - adjust h-10 and w-12 as needed --> 
+            <!-- Navigation -->
+            <nav>
+              <button class="flex items-center max-md:hidden text-gray-700 hover:text-gray-900 focus:outline-none"> <!-- Button for "Programs" - gray text, darker on hover, remove focus outline -->
+                <span>Programs</span>
+                <svg class="ml-1 h-4 w-4 fill-current" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <!-- (Dropdown Arrow SVG - You'd need to include the actual SVG path here) -->
+                  <path d="M7 7l3-3 3 3m-6 6l3 3 3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </button>
+            </nav>
+          </div>
+      
+          
+      
+          <!-- Button -->
+          <div>
+            <button class="bg-[#d191af] text-gray-700 font-medium rounded-full max-sm:px-1 max-sm:py-0 max-sm:m-2 max-sm:text-sm px-4 py-2 hover:bg-pink-300 focus:outline-none focus:ring-2 focus:ring-pink-300 focus:ring-opacity-50"> <!-- Pink background, gray text, medium font, rounded button, padding, hover effect, focus styles -->
+              Get Free Demo
+            </button>
+          </div>
+      
+        </div>
+      </header>
+      
+      <!-- Announcement Bar -->
+      <div class="bg-gray-100 py-3 text-center text-gray-800 font-medium">
+          Build Your Tech Career - Get a scholarship Before It's Gone! Enroll Now
+      </div>
+
+      <!-- Hero Section -->
+      <section class="bg-[#843B94] min-h-screen relative z-[-1] flex items-center justify-center p-10">
+          <div class="container mx-auto max-w-5xl w-full grid max-md:block md:grid-cols-2 gap-10 items-center">
+
+              <!-- Text Section -->
+              <div class="text-white space-y-6">
+                  <p class="text-sm">Home ></p>
+                  <p class="text-lg font-semibold">
+                      Certified Program <span class="text-yellow-400">★★★★★</span> ratings
+                  </p>
+                  <h1 class="text-3xl font-bold uppercase leading-tight">
+                      Certificate Course<br> in Cybersecurity Essentials: The Foundation<br> 
+                  </h1>
+                  <p class="text-white">
+                      It is a long established fact that a reader <br>will be distracted by the readable content <br>of a page when looking at its layout.
+                  </p>
+
+                  <div class="flex gap-5 text-lg">
+                      <p><span class="font-bold">Course Type:</span> Online</p>
+                      <p><span class="font-bold">Placement Support:</span> Placement Assistance</p>
+                  </div>
+
+                  <!-- Buttons -->
+                  <div class="flex gap-8">
+                      <button class="bg-[#6265AC] px-8 w-[250px] py-2 rounded-full text-white font-semibold hover:bg-blue-600">
+                          Enroll Now
+                      </button>
+                      <button class="border border-white w-[250px] px-8 py-2 rounded-full text-sm text-white font-semibold hover:bg-white hover:text-purple-700">
+                          View Course Syllabus
+                      </button>
+                  </div>
+              </div>
+
+              <!-- Image Section -->
+              <div class="relative">
+                  <div class="p-6 absolute top-[-350px] ml-[-149px]">
+                      <img src="assets/fbbaa.png" alt="Smiling woman using a laptop for online course" class="max-md:hidden relative z-[-1] max-w-[100%]">
+                  </div>
+              </div>
+
+          </div>
+      </section>
+
+      <!-- Overview Section -->
+      <section class="py-12 bg-white">
+          <div class="container max-w-[900px] mx-auto px-4">
+              <h2 class="text-2xl font-bold text-gray-800 mb-2">Overview Of Certificate Course In Cybersecurity Essentials: The Foundation</h2>
+              <p class="text-gray-700 mb-8">This Foundation Course on Cybersecurity introduces essential concepts and key terminologies in digital security. You’ll learn about network security, threat analysis, encryption, and ethical hacking, building a strong understanding of how to protect digital assets.By the end of the course, you will have a solid grasp of the fundamental principles of cybersecurity, key terminologies and be ready to explore more advanced areas of digital security. </p>
+              This 10 weeks foundational module includes
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                  <!-- Column 1 -->
+                  <article class="border-r-2 border-[#843B94] max-md:border-0 pr-8">
+                      <h3 class="text-2xl font-semibold text-[#656299] mb-2">Module 1- What is Cyber security?</h3>
+                      <ul class="text-gray-600 list-disc pl-5">
+                        <li>Importance of cyber security in today’s world.</li><br>
+                        <li>Understanding the cyber space</li><br>
+                        <li>Difference between cybersecurity and Information security</li><br>
+                      </ul>
+                                        </article>
+
+                  <!-- Column 2 -->
+                  <article class="border-r-2 border-[#843B94] max-md:border-0 pr-8">
+                      <h3 class="text-lg font-semibold text-[#656299] mb-2">Module 2- Network security</h3>
+                      <ul class="text-gray-600 list-disc pl-5">
+                        <li>History of the Internet</li><br>
+                        <li>Types of network</li><br>
+                        <li>Network protocol</li><br>
+                        <li>Network Intrusion</li><br>
+                        <li>Network security measures</li>
+                      </ul>
+                    </article>
+
+                  <!-- Column 3 -->
+                  <article class="border-r-2 border-[#843B94] max-md:border-0 pr-8">
+                      <h3 class="text-lg font-semibold text-[#656299] mb-2">Module 3: Application security</h3>
+                      <ul class="text-gray-600 list-disc pl-5">
+                        <li>Introduction to Application Security</li>
+                        <li>Importance of Application Security</li>
+                        <li>Secure Software Development Lifecycle (SDLC)</li>
+                        <li>Threat Modeling</li>
+                        <li>Secure Coding Practices</li>
+                        
+                      </ul>
+                                        </article>
+              </div>
+
+              <div class="text-center mt-8">
+                  <a href="#" class="bg-[#6265AC] hover:bg-indigo-700 text-white font-bold py-2 px-6 rounded-full inline-block focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-50">
+                      Learn More
+                  </a>
+              </div>
+          </div>
+      </section>
+
+      <!-- Video Section -->
+      <section class="max-w-3xl mx-auto  py-12">
+          <!-- Title -->
+          <h2 class="text-2xl font-bold mb-4">Introduction to Cyber Crime & Cyber Law</h2>
+
+          <!-- Video and Description Section -->
+          <div class="flex items-center justify-center gap-6">
+              <!-- Video Placeholder -->
+              <figure class="w-2/3 rounded-lg overflow-hidden shadow-lg">
+                  <img src="https://cdn.dribbble.com/userupload/19490657/file/original-50bc6c3af904efa302b532a17f6cc6fa.gif" alt="Cyber Crime Video Preview" class="w-full h-[200px]">
+                  <figcaption class="text-sm text-gray-500 mt-2">Click to play video introduction</figcaption>
+              </figure>
+
+              <!-- Description -->
+              <p class="w-1/3 text-gray-700 text-sm text-left">
+                  It is a long established fact that a reader will be distracted by the readable
+                  content of a page when looking at its layout. The point of using Lorem Ipsum is
+                  that it has look like readable English.
+              </p>
+          </div>
+
+          <!-- Button -->
+          <div class="mt-6 text-center">
+              <a href="#" class="bg-[#6265AC] text-white py-2 px-6 rounded-full text-sm shadow-md hover:bg-indigo-600 transition">
+                  Download Complete Syllabus
+              </a>
+          </div>
+      </section>
+
+      <!-- Consultation Form Section -->
+      <section class="bg-gray-50 py-12">
+          <div class="container mx-auto px-4 md:px-8 lg:px-16 grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+              <!-- Image Section -->
+              <div >
+                  <img src="assets/boyimag.png" alt="Smiling man ready to provide expert advice"/>
+              </div>
+
+              <!-- Form Section -->
+              <div>
+                  <h2 class="text-2xl font-bold text-black mb-4">
+                      Get Expert Advice for Free:<br />
+                      <span class="text-black">Register for Your Free Consultation Now!</span>
+                  </h2>
+
+                  <form class="space-y-4">
+                      <div>
+                          <input type="text" id="full-name" placeholder="Full Name" class="w-full px-4 py-2 border rounded-md focus:ring-blue-500 focus:border-blue-500" aria-label="Full Name" required />
+                      </div>
+
+                      <div>
+                          <div class="relative">
+                              <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                                  <span class="fi fi-in" title="India"><img src="assets/india.png" class="w-8" alt=""></span> <span class="ml-1 text-gray-500">+91</span>
+                              </div>
+                              <input type="tel" id="phone-number" placeholder="Phone Number" class="w-full pl-20 px-4 py-2 border rounded-md focus:ring-blue-500 focus:border-blue-500" aria-label="Phone Number" required />
+                          </div>
+                      </div>
+
+                      <div>
+                          <select class="w-full px-4 py-2 border rounded-md appearance-none bg-white focus:ring-blue-500 focus:border-blue-500" aria-label="Preferred Language">
+                              <option>Malayalam</option>
+                              <option>English</option>
+                              <option>Hindi</option>
+                          </select>
+                      </div>
+
+                      <div class="space-y-2 text-gray-700">
+                          <div class="flex items-center">
+                              <svg class="w-5 h-5 mr-2 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                              <span>We'll reach out to you between 10 AM and 9 PM</span>
+                          </div>
+                          <div class="flex items-center">
+                              <svg class="w-5 h-5 mr-2 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                              <span>Unbiased career guidance</span>
+                          </div>
+                          <div class="flex items-center">
+                              <svg class="w-5 h-5 mr-2 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                              <span>Personalized guidance based on your skills and interests</span>
+                          </div>
+                      </div>
+
+                      <div>
+                          <button type="submit" class="w-full bg-[#6265AC] text-white py-2 rounded-full hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
+                              Register Now
+                          </button>
+                      </div>
+                  </form>
+              </div>
+          </div>
+      </section>
+
+      <!-- Career Paths Section -->
+      <section class="bg-white py-20">
+          <div class="container mx-auto px-6 lg:px-8">
+              <div class="text-center px-24 max-md:px-2 lg:text-left mb-16">
+                  <h2 class="text-3xl font-bold text-gray-800 mb-4">Career Paths In Cyber Crime & Cyber Law</h2>
+                  <p class="text-gray-600 leading-relaxed">
+                      Lorem ipsum dolor sit amet. Ea temporibus placeat ab officiis dolorem ut libero consequuntur sed fuga error aut velit nulla et amet laudantium est quis saepe.
+                      Et nihil voluptates ut libero iure id tenetur galisum sit fuga culpa qui reprehenderit voluptatum vel internos obcaecati.
+                  </p>
+              </div>
+
+              <div class="lg:grid lg:grid-cols-2 lg:gap-12">
+                  <article class="flex items-center flex-col  border-r-2 max-md:border-0 border-[#843B94]">
+                      <h3 class="text-xl font-semibold text-[#6265AC] mb-4">Et nihil voluptates ut libero iure i</h3>
+                      <p class="text-gray-600 max-w-[300px] leading-relaxed">
+                          Lorem ipsum dolor sit amet. Ea temporibus placeat ab officiis dolorem ut libero consequuntur sed fuga error aut velit nulla et amet laudantium est quis saepe.
+                          Et nihil voluptates ut libero iure id tenetur galisum sit fuga culpa qui reprehenderit voluptatum vel internos obcaecati.
+                      </p>
+                  </article>
+                  <article class="flex items-center flex-col">
+                      <h3 class="text-xl font-semibold text-[#6265AC] mb-4">Et nihil voluptates ut libero iure i</h3>
+                      <p class="text-gray-600  max-w-[300px] leading-relaxed">
+                          Lorem ipsum dolor sit amet. Ea temporibus placeat ab officiis dolorem ut libero consequuntur sed fuga error aut velit nulla et amet laudantium est quis saepe.
+                          Et nihil voluptates ut libero iure id tenetur galisum sit fuga culpa qui reprehenderit voluptatum vel internos obcaecati.
+                      </p>
+                  </article>
+              </div>
+
+              <div class="text-center mt-16">
+                  <button class="bg-[#6265AC] hover:bg-indigo-700 text-white font-bold py-3 px-8 rounded-full focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-50">
+                      Book your Career Counselling
+                  </button>
+              </div>
+          </div>
+      </section>
+
+      <!-- Curriculum Section -->
+      <section class="bg-white py-20">
+          <div class="container mx-auto px-6 lg:px-8">
+              <div class="text-center lg:text-left px-24 max-md:px-2 mb-10">
+                  <h2 class="text-3xl font-bold text-gray-800 mb-4">Cyber Crime & Cyber Law Curriculum</h2>
+                  <p class="text-gray-600 leading-relaxed">
+                      Lorem ipsum dolor sit amet. Ea temporibus placeat ab officiis dolorem ut libero consequuntur sed fuga error aut velit nulla et amet laudantium est quis saepe.
+                  </p>
+              </div>
+
+              <div class="space-y-12 px-24 max-md:px-2  max-w-[1200px] mb-12">
+                  <hr class="border-[#6265AC]" aria-hidden="true" />
+                  <hr class="border-[#6265AC]" aria-hidden="true" />
+                  <hr class="border-[#6265AC]" aria-hidden="true" />
+                  <hr class="border-[#6265AC]" aria-hidden="true" />
+                  <hr class="border-[#6265AC]" aria-hidden="true" />
+              </div>
+
+              <div class="text-center">
+                  <button class="bg-[#6265AC] hover:bg-indigo-700 text-white font-bold py-3 px-8 rounded-full focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-50">
+                      Explore Curriculum
+                  </button>
+              </div>
+          </div>
+      </section>
+
+
+      <!-- Eligibility Section -->
+      <section class="bg-white py-20">
+        <div class="container mx-auto px-6 lg:px-8">
+            <div class="text-center px-22 max-md:px-2 lg:text-left mb-10">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4 ">Eligibility / Cyber Crime & Cyber Law</h2>
+                <p class="text-gray-600 leading-relaxed">
+                    Lorem ipsum dolor sit amet. Ea temporibus placeat ab officiis dolorem ut libero consequuntur sed fuga error aut velit nulla et amet laudantium est quis saepe.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 max-md:px-2 px-22">
+                <!-- Eligibility Box 1 -->
+                <article class="p-6 rounded-lg">
+                    <h3 class="text-xl font-semibold text-[#6265AC] mb-4">Et nihil voluptates ut libero iure i</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Lorem ipsum dolor sit amet. Ea temporibus placeat ab officiis dolorem ut libero consequuntur sed fuga error aut velit nulla et amet laudantium est quis saepe.
+                        Et nihil voluptates ut libero iure id tenetur galisum sit fuga culpa qui reprehenderit voluptatum vel internos obcaecati.
+                    </p>
+                </article>
+
+                <!-- Eligibility Box 2 -->
+                <article class="p-6 rounded-lg">
+                    <h3 class="text-xl font-semibold text-[#6265AC] mb-4">Et nihil voluptates ut libero iure i</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Lorem ipsum dolor sit amet. Ea temporibus placeat ab officiis dolorem ut libero consequuntur sed fuga error aut velit nulla et amet laudantium est quis saepe.
+                        Et nihil voluptates ut libero iure id tenetur galisum sit fuga culpa qui reprehenderit voluptatum vel internos obcaecati.
+                    </p>
+                </article>
+
+                <!-- Eligibility Box 3 -->
+                <article class="p-6 rounded-lg">
+                    <h3 class="text-xl font-semibold text-[#6265AC] mb-4">Et nihil voluptates ut libero iure i</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Lorem ipsum dolor sit amet. Ea temporibus placeat ab officiis dolorem ut libero consequuntur sed fuga error aut velit nulla et amet laudantium est quis saepe.
+                        Et nihil voluptates ut libero iure id tenetur galisum sit fuga culpa qui reprehenderit voluptatum vel internos obcaecati.
+                    </p>
+                </article>
+
+                <!-- Eligibility Box 4 -->
+                <article class="p-6 rounded-lg">
+                    <h3 class="text-xl font-semibold text-[#6265AC] mb-4">Et nihil voluptates ut libero iure i</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Lorem ipsum dolor sit amet. Ea temporibus placeat ab officiis dolorem ut libero consequuntur sed fuga error aut velit nulla et amet laudantium est quis saepe.
+                        Et nihil voluptates ut libero iure id tenetur galisum sit fuga culpa qui reprehenderit voluptatum vel internos obcaecati.
+                    </p>
+                </article>
+            </div>
+
+            <div class="text-center mt-16">
+                <button class="bg-[#6265AC] :bg-indigo-700 text-white font-bold py-3 px-8 rounded-full focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-50">
+                    Explore More
+                </button>
+            </div>
+        </div>
+    </section>
+            <!-- Why Live Sessions Section -->
+      <section class="bg-white py-20">
+          <div class="container mx-auto px-6 lg:px-8">
+              <div class="text-center px-22 max-md:px-2 lg:text-left mb-16">
+                  <h2 class="text-3xl font-bold text-black">Why Live Sessions?</h2>
+              </div>
+
+              <div class="lg:grid px-22 max-md:px-2 lg:grid-cols-2 lg:gap-37 items-start">
+                  <!-- Text Content Section (Now on the Left - First in HTML) -->
+                  <div class="  live-session-text-content">
+                      <div class="mb-10">
+                          <h3 class="text-xl font-semibold text-[#6265AC] mb-4">Et nihil voluptates ut libero iure i</h3>
+                          <p class="text-gray-600 leading-relaxed">
+                              Lorem ipsum dolor sit amet. Ea temporibus placeat ab officiis dolorem ut libero consequuntur sed fuga error aut velit nulla et amet laudantium est quis saepe.
+                              Et nihil voluptates ut libero iure id tenetur galisum sit fuga culpa qui reprehenderit voluptatum vel internos obcaecati.
+                          </p>
+                      </div>
+                      <div>
+                          <h3 class="text-xl font-semibold text-[#6265AC] mb-4">Et nihil voluptates ut libero iure i</h3>
+                          <p class="text-gray-600 leading-relaxed">
+                              Lorem ipsum dolor sit amet. Ea temporibus placeat ab officiis dolorem ut libero consequuntur sed fuga error aut velit nulla et amet laudantium est quis saepe.
+                              Et nihil voluptates ut libero iure id tenetur galisum sit fuga culpa qui reprehenderit voluptatum vel internos Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eligendi explicabo in suscipit. Deleniti consectetur ipsa dolorum dolor cumque recusandae aliquid iure libero, error, optio consequatur neque incidunt? Veniam, natus. Iure.
+                          </p>
+                      </div>
+                  </div>
+
+                  <!-- Image Section (Now on the Right - Second in HTML) -->
+                  <div class=" ">
+                      <img class="w-[400px]" src="assets/secdimg.png" alt="Engaging online live session" />
+                  </div>
+              </div>
+
+              <div class="text-center mt-16">
+                  <button class="bg-[#6265AC] hover:bg-indigo-700 text-white font-bold py-3 px-8 rounded-full focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-50">
+                      Access Demo Class
+                  </button>
+              </div>
+          </div>
+      </section>
+
+      <!-- Mentors Section -->
+      <section class="bg-white py-12">
+          <div class="container mx-auto px-4 md:px-8">
+              
+
+              <div class="grid grid-cols-1 max-md:px-2 px-22 md:grid-cols-3 gap-6">
+                  <!-- Mentor Card 1 -->
+                  <article class="bg-pink-200 rounded-xl ">
+                      <div class="relative h-24 w-24 rounded-full mx-auto -mt-12 bg-white border-4 border-white">
+                          <img
+                              src="assets/thirdimg.png"
+                              alt="Mentor 1"
+                              class="absolute inset-0 h-full w-full object-cover rounded-full"
+                          />
+                      </div>
+                      <div class="p-6 h-[200px] text-center">
+                          <h3 class="text-xl font-semibold text-gray-800 mb-2">Mentor Name 1</h3>
+                          <p class="text-gray-700">Short description about mentor 1.</p>
+                      </div>
+                  </article>
+
+                  <!-- Mentor Card 2 -->
+                  <article class="bg-pink-200 rounded-xl ">
+                      <div class="relative h-24 w-24 rounded-full mx-auto -mt-12 bg-white border-4 border-white">
+                          <img
+                              src="assets/thirdimg.png"
+                              alt="Mentor 2"
+                              class="absolute inset-0 h-full w-full object-cover rounded-full"
+                          />
+                      </div>
+                      <div class="p-6 text-center">
+                          <h3 class="text-xl font-semibold text-gray-800 mb-2">Mentor Name 2</h3>
+                          <p class="text-gray-700">Short description about mentor 2.</p>
+                      </div>
+                  </article>
+
+                  <!-- Mentor Card 3 -->
+                  <article class="bg-pink-200 rounded-xl">
+                      <div class="relative h-24 w-24 rounded-full mx-auto -mt-12 bg-white border-4 border-white">
+                          <img
+                              src="assets/thirdimg.png"
+                              alt="Mentor 3"
+                              class="absolute inset-0 h-full w-full object-cover rounded-full"
+                          />
+                      </div>
+                      <div class="p-6 text-center">
+                          <h3 class="text-xl font-semibold text-gray-800 mb-2">Mentor Name 3</h3>
+                          <p class="text-gray-700">Short description about mentor 3.</p>
+                      </div>
+                  </article>
+              </div>
+
+              <!-- Blue Rectangle (Consider what this is for and make it semantic if needed) -->
+              <div class="mt-12 text-center">
+                  <div class="bg-[#6365aa] rounded-full h-12 w-full max-w-sm mx-auto">
+                      <!--  Add content or purpose for this rectangle if needed -->
+                  </div>
+              </div>
+          </div>
+      </section>
+
+
+
+
+
+
+
+
+      <section class="flex min-h-screen w-full bg-[#d191af] m-0 p-0 box-border overflow-hidden">
+        <div class="relative w-full h-full">
+            <!-- Slider Container -->
+            <div class="flex transition-transform duration-500 ease-in-out" id="slider-container-expert">
+              <div class="slideExpert flex-shrink-0 w-full h-full relative">
+                <!-- Main Content Container -->
+                <div class="flex flex-col w-full min-h-screen">
+                  
+                  <!-- Heading and Description Section -->
+                  <div class="w-full text-center md:text-left px-6 md:px-46 z-30 mt-8 ">
+                    <h1 class="text-4xl font-bold text-white">Meet Your Full Stack Trainer</h1>
+                    <p class="text-lg text-white/80 mt-2">
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem voluptates incidunt, porro, a enim modi dignissimos architecto nam, perspiciatis consequuntur laborum suscipit laboriosam omnis! Totam amet dicta saepe ad voluptatem!
+                    </p>
+                  </div>
+                  
+                  <!-- Learning With Experts Heading -->
+                  <h1 class="block md:hidden text-3xl md:text-[40px] md:pl-6 font-light text-white/70 text-center mt-6 mb-6">
+                    Learning With Experts
+                  </h1>
+                  
+                  <!-- Image and Info Section -->
+                  <div class="flex flex-col md:flex-row w-full flex-1">
+                    
+                    <!-- Image Section - Positioned Lower -->
+                    <div class="relative w-full md:w-2/5 h-[40vh] md:h-[60vh] mt-4">
+                      <img class="h-[40vh] md:h-[60vh] md:w-[515px] absolute top-0 md:left-20 left-0 z-10" src="assets/shape 2.png" alt="Background shape">
+                      <img class="absolute top-[5vh] md:top-[13vh] left-1/2 md:left-[380px] transform -translate-x-1/2  md:left-1/4 h-[35vh] md:h-[69vh] z-20"
+                           src="assets/woman 2.png" alt="Trainer image">
+                    </div>
+                    
+                    <!-- Trainer Information Section -->
+                    <div class="w-full md:w-3/5 flex flex-col items-center md:mt-[60px] md:items-start">
+                      <h1 class="hidden md:block text-3xl md:text-[40px] md:pl-6 font-light text-white/70 text-center mt-6 mb-6">
+                        Learning With Experts
+                      </h1>
+                      <div class="flex flex-col justify-end items-center md:items-start w-full md:w-[90%] bg-[#9f6496] rounded-[20px] p-6 md:p-8">
+                        <h3 class="font-bold text-white text-4xl md:text-[55px] m-0 text-center md:text-left">ANKIT FADIA</h3>
+                        <p class="mt-2 text-white/70 text-lg md:text-[20px] font-light text-center md:text-left">Computer Security Expert</p>
+                        
+                        <p class="mt-4 text-white/80 text-lg md:text-[18px] font-light text-center md:text-left">
+                          Based in San Francisco, USA | Available for mentorship globally | 20+ years in Cyber Security
+                        </p>
+                        <p class="mt-2 text-white/80 text-lg md:text-[18px] font-light text-center md:text-left">
+                          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        </p>
+                        
+                        <div class="mt-6 md:mt-8 flex flex-col md:flex-row gap-4">
+                          <button class="bg-[#d191af] px-6 py-3 text-white/80 rounded hover:bg-[#c27a9a] transition-colors">Join now</button>
+                          <button class="bg-[#d191af] px-6 py-3 text-white/80 rounded hover:bg-[#c27a9a] transition-colors">Share now</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <!-- Pagination Dots -->
+                  <div class="flex justify-center items-center w-full mt-8 mb-6">
+                    <div class="flex space-x-2">
+                      <div class="w-3 h-3 rounded-full bg-[#d191af]"></div>
+                      <div class="w-3 h-3 rounded-full bg-white/40"></div>
+                      <div class="w-3 h-3 rounded-full bg-white/40"></div>
+                      <div class="w-3 h-3 rounded-full bg-white/40"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+                <!-- Slide 2 -->
+                <div class="slideExpert flex-shrink-0 w-full h-full relative">
+                  <!-- Main Content Container -->
+                  <div class="flex flex-col w-full min-h-screen">
+                    
+                    <!-- Heading and Description Section -->
+                    <div class="w-full text-center md:text-left px-6 md:px-46 z-30 mt-8 ">
+                      <h1 class="text-4xl font-bold text-white">Meet Your Full Stack Trainer</h1>
+                      <p class="text-lg text-white/80 mt-2">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem voluptates incidunt, porro, a enim modi dignissimos architecto nam, perspiciatis consequuntur laborum suscipit laboriosam omnis! Totam amet dicta saepe ad voluptatem!
+                      </p>
+                    </div>
+                    
+                    <!-- Learning With Experts Heading -->
+                    <h1 class="block md:hidden text-3xl md:text-[40px] md:pl-6 font-light text-white/70 text-center mt-6 mb-6">
+                      Learning With Experts
+                    </h1>
+                    
+                    <!-- Image and Info Section -->
+                    <div class="flex flex-col md:flex-row w-full flex-1">
+                      
+                      <!-- Image Section - Positioned Lower -->
+                      <div class="relative w-full md:w-2/5 h-[40vh] md:h-[60vh] mt-4">
+                        <img class="h-[40vh] md:h-[60vh] md:w-[515px] absolute top-0 md:left-20 left-0 z-10" src="assets/shape 2.png" alt="Background shape">
+                        <img class="absolute top-[5vh] md:top-[13vh] left-1/2 md:left-[380px] transform -translate-x-1/2  md:left-1/4 h-[35vh] md:h-[69vh] z-20"
+                             src="assets/woman 2.png" alt="Trainer image">
+                      </div>
+                      
+                      <!-- Trainer Information Section -->
+                      <div class="w-full md:w-3/5 flex flex-col items-center md:mt-[60px] md:items-start">
+                        <h1 class="hidden md:block text-3xl md:text-[40px] md:pl-6 font-light text-white/70 text-center mt-6 mb-6">
+                          Learning With Experts
+                        </h1>
+                        <div class="flex flex-col justify-end items-center md:items-start w-full md:w-[90%] bg-[#9f6496] rounded-[20px] p-6 md:p-8">
+                          <h3 class="font-bold text-white text-4xl md:text-[55px] m-0 text-center md:text-left">ANKIT FADIA</h3>
+                          <p class="mt-2 text-white/70 text-lg md:text-[20px] font-light text-center md:text-left">Computer Security Expert</p>
+                          
+                          <p class="mt-4 text-white/80 text-lg md:text-[18px] font-light text-center md:text-left">
+                            Based in San Francisco, USA | Available for mentorship globally | 20+ years in Cyber Security
+                          </p>
+                          <p class="mt-2 text-white/80 text-lg md:text-[18px] font-light text-center md:text-left">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                          </p>
+                          
+                          <div class="mt-6 md:mt-8 flex flex-col md:flex-row gap-4">
+                            <button class="bg-[#d191af] px-6 py-3 text-white/80 rounded hover:bg-[#c27a9a] transition-colors">Join now</button>
+                            <button class="bg-[#d191af] px-6 py-3 text-white/80 rounded hover:bg-[#c27a9a] transition-colors">Share now</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div> 
+                    <!-- Pagination Dots -->
+                    <div class="flex justify-center items-center w-full mt-8 mb-6">
+                      <div class="flex space-x-2">
+                        <div class="w-3 h-3 rounded-full bg-[#d191af]"></div>
+                        <div class="w-3 h-3 rounded-full bg-white/40"></div>
+                        <div class="w-3 h-3 rounded-full bg-white/40"></div>
+                        <div class="w-3 h-3 rounded-full bg-white/40"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              <!-- Slide 3 -->
+              <div class="slideExpert flex-shrink-0 w-full h-full relative">
+                <!-- Main Content Container -->
+                <div class="flex flex-col w-full min-h-screen">
+                  
+                  <!-- Heading and Description Section -->
+                  <div class="w-full text-center md:text-left px-6 md:px-46 z-30 mt-8 ">
+                    <h1 class="text-4xl font-bold text-white">Meet Your Full Stack Trainer</h1>
+                    <p class="text-lg text-white/80 mt-2">
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem voluptates incidunt, porro, a enim modi dignissimos architecto nam, perspiciatis consequuntur laborum suscipit laboriosam omnis! Totam amet dicta saepe ad voluptatem!
+                    </p>
+                  </div>
+                  
+                  <!-- Learning With Experts Heading -->
+                  <h1 class="block md:hidden text-3xl md:text-[40px] md:pl-6 font-light text-white/70 text-center mt-6 mb-6">
+                    Learning With Experts
+                  </h1>
+                  
+                  <!-- Image and Info Section -->
+                  <div class="flex flex-col md:flex-row w-full flex-1">
+                    
+                    <!-- Image Section - Positioned Lower -->
+                    <div class="relative w-full md:w-2/5 h-[40vh] md:h-[60vh] mt-4">
+                      <img class="h-[40vh] md:h-[60vh] md:w-[515px] absolute top-0 md:left-20 left-0 z-10" src="assets/shape 2.png" alt="Background shape">
+                      <img class="absolute top-[5vh] md:top-[13vh] left-1/2 md:left-[380px] transform -translate-x-1/2  md:left-1/4 h-[35vh] md:h-[69vh] z-20"
+                           src="assets/woman 2.png" alt="Trainer image">
+                    </div>
+                    
+                    <!-- Trainer Information Section -->
+                    <div class="w-full md:w-3/5 flex flex-col items-center md:mt-[60px] md:items-start">
+                      <h1 class="hidden md:block text-3xl md:text-[40px] md:pl-6 font-light text-white/70 text-center mt-6 mb-6">
+                        Learning With Experts
+                      </h1>
+                      <div class="flex flex-col justify-end items-center md:items-start w-full md:w-[90%] bg-[#9f6496] rounded-[20px] p-6 md:p-8">
+                        <h3 class="font-bold text-white text-4xl md:text-[55px] m-0 text-center md:text-left">ANKIT FADIA</h3>
+                        <p class="mt-2 text-white/70 text-lg md:text-[20px] font-light text-center md:text-left">Computer Security Expert</p>
+                        
+                        <p class="mt-4 text-white/80 text-lg md:text-[18px] font-light text-center md:text-left">
+                          Based in San Francisco, USA | Available for mentorship globally | 20+ years in Cyber Security
+                        </p>
+                        <p class="mt-2 text-white/80 text-lg md:text-[18px] font-light text-center md:text-left">
+                          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        </p>
+                        
+                        <div class="mt-6 md:mt-8 flex flex-col md:flex-row gap-4">
+                          <button class="bg-[#d191af] px-6 py-3 text-white/80 rounded hover:bg-[#c27a9a] transition-colors">Join now</button>
+                          <button class="bg-[#d191af] px-6 py-3 text-white/80 rounded hover:bg-[#c27a9a] transition-colors">Share now</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                    <!-- Pagination Dots -->
+                  <div class="flex justify-center items-center w-full mt-8 mb-6">
+                    <div class="flex space-x-2">
+                      <div class="w-3 h-3 rounded-full bg-[#d191af]"></div>
+                      <div class="w-3 h-3 rounded-full bg-white/40"></div>
+                      <div class="w-3 h-3 rounded-full bg-white/40"></div>
+                      <div class="w-3 h-3 rounded-full bg-white/40"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            
+
+            <!-- Dots Navigation -->
+         </div>   
+    </section>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+    let currentIndexExpert = 0;
+    const slidesExpert = document.querySelectorAll(".slideExpert");
+    const sliderContainerExpert = document.getElementById("slider-container-expert");
+    const dotsExpert = document.querySelectorAll(".dot-expert");
+
+    function moveSlideExpert(index) {
+        currentIndexExpert = index;
+        const translateX = -index * 100;
+        sliderContainerExpert.style.transform = `translateX(${translateX}%)`;
+
+        dotsExpert.forEach((dot, i) => {
+            if (i === index) {
+                dot.classList.add("bg-black", "w-8"); // Active dot: Black & Longer
+                dot.classList.remove("bg-white-400", "w-3");
+            } else {
+                dot.classList.add("bg-white-400", "w-3"); // Inactive dot: Gray & Shorter
+                dot.classList.remove("bg-black", "w-8");
+            }
+        });
+    }
+
+    function autoSlideExpert() {
+        setInterval(() => {
+            currentIndexExpert = (currentIndexExpert + 1) % slidesExpert.length;
+            moveSlideExpert(currentIndexExpert);
+        }, 5000); // Auto-slide every 5 seconds
+    }
+
+    dotsExpert.forEach((dot, index) => {
+        dot.addEventListener("click", () => {
+            moveSlideExpert(index);
+        });
+    });
+
+    autoSlideExpert(); // Start auto-slide
+});
+
+    </script>
+          <!-- Course Certificates Section -->
+          <section class="bg-white py-10">
+            <div class="container mx-auto text-left max-md:px-2 px-28">
+                <h2 class="text-3xl font-bold text-gray-800 mb-2">Cyber Crime & Cyber Law Course Certificates</h2>
+                <p class="text-gray-600 mb-8">Courses Recognised by</p>
+  
+                <div class="max-w-lg shadow-lg rounded-md overflow-hidden">
+                    <img src="assets/cert.png" alt="Cyber Crime & Cyber Law Course Certificate" class="w-full block" />
+                </div>
+            </div>
+        </section>
+
+
+        <div class="container mx-auto py-12 relative mb-0">
+          <!-- Background Vector -->
+          
+        
+          <div class="relative w-full md:w-[82vw]   py-10 mx-auto rounded-3xl overflow-hidden">
+            <h2 class="text-3xl font-bold text-gray-800 mb-2">Success <Stories:Reviews> From Our Students</Stories:Reviews></h2>
+            <p class="text-gray-600 mb-8">Enrolled by Students ★8(Ratings)</p>
+<div class="flex flex-col items-center w-full md:w-[80vw] py-10 relative mx-auto rounded-3xl overflow-hidden z-10" >
+
+  <!-- Background Shape (Visible on Desktop Only) -->
+  <div class="hidden md:block absolute top-1 left-1/2 transform -translate-x-1/2 w-[70vw] h-[350px] bg-[#9f6496] z-[-1] "></div>
+      
+
+  <!-- Testimonial Container -->
+  <div id="testimonialWrapper" class="flex transition-transform duration-500 ease-in-out  mt:0px md:mt-[30px] lg:mt-[38px] z-30">      <!-- slide 1 -->
+    <div class="testimonial-slide flex-shrink-0 w-1/3 px-4">
+      <div class="bg-white p-6 rounded-2xl shadow-[0px_3px_3px_3px_rgba(0,0,0,0.15)] flex flex-col items-center justify-around">
+        <img src="assets/Quote Icon.png" class="w-10 h-10 md:w-12 md:h-12" alt="Quote Icon" />
+        <p class="text-gray-600 text-center text-sm md:text-base mt-2">
+          "Great service and amazing experience! Highly recommended."
+        </p>
+        <div class="mt-4 flex items-center gap-3">
+          <img src="https://randomuser.me/api/portraits/women/2.jpg" class="w-8 h-8 md:w-10 md:h-10 rounded-full" alt="User" />
+          <div>
+            <h4 class="text-gray-800 font-semibold text-sm md:text-base">Jane Doe</h4>
+            <div class="flex text-yellow-500 text-sm md:text-base">★★★★★</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- slide 2 -->
+    <div class="testimonial-slide flex-shrink-0 w-1/3 px-4">
+      <div class="bg-white p-6 rounded-2xl shadow-[0px_3px_3px_3px_rgba(0,0,0,0.15)] flex flex-col items-center justify-around">
+        <img src="assets/Quote Icon.png" class="w-10 h-10 md:w-12 md:h-12" alt="Quote Icon" />
+        <p class="text-gray-600 text-center text-sm md:text-base mt-2">
+          "Great service and amazing experience! Highly recommended."
+        </p>
+        <div class="mt-4 flex items-center gap-3">
+          <img src="https://randomuser.me/api/portraits/women/2.jpg" class="w-8 h-8 md:w-10 md:h-10 rounded-full" alt="User" />
+          <div>
+            <h4 class="text-gray-800 font-semibold text-sm md:text-base">Jane Doe</h4>
+            <div class="flex text-yellow-500 text-sm md:text-base">★★★★★</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- slide 3 -->
+    <div class="testimonial-slide flex-shrink-0 w-1/3 px-4">
+      <div class="bg-white p-6 rounded-2xl shadow-[0px_3px_3px_3px_rgba(0,0,0,0.15)] flex flex-col items-center justify-around">
+        <img src="assets/Quote Icon.png" class="w-10 h-10 md:w-12 md:h-12" alt="Quote Icon" />
+        <p class="text-gray-600 text-center text-sm md:text-base mt-2">
+          "Great service and amazing experience! Highly recommended."
+        </p>
+        <div class="mt-4 flex items-center gap-3">
+          <img src="https://randomuser.me/api/portraits/women/2.jpg" class="w-8 h-8 md:w-10 md:h-10 rounded-full" alt="User" />
+          <div>
+            <h4 class="text-gray-800 font-semibold text-sm md:text-base">Jane Doe</h4>
+            <div class="flex text-yellow-500 text-sm md:text-base">★★★★★</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- slide 4 -->
+    <div class="testimonial-slide flex-shrink-0 w-1/3 px-4">
+      <div class="bg-white p-6 rounded-2xl shadow-[0px_3px_3px_3px_rgba(0,0,0,0.15)] flex flex-col items-center justify-around">
+        <img src="assets/Quote Icon.png" class="w-10 h-10 md:w-12 md:h-12" alt="Quote Icon" />
+        <p class="text-gray-600 text-center text-sm md:text-base mt-2">
+          "Great service and amazing experience! Highly recommended."
+        </p>
+        <div class="mt-4 flex items-center gap-3">
+          <img src="https://randomuser.me/api/portraits/women/2.jpg" class="w-8 h-8 md:w-10 md:h-10 rounded-full" alt="User" />
+          <div>
+            <h4 class="text-gray-800 font-semibold text-sm md:text-base">Jane Doe</h4>
+            <div class="flex text-yellow-500 text-sm md:text-base">★★★★★</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- slide 5 -->
+    <div class="testimonial-slide flex-shrink-0 w-1/3 px-4">
+      <div class="bg-white p-6 rounded-2xl shadow-[0px_3px_3px_3px_rgba(0,0,0,0.15)] flex flex-col items-center justify-around">
+        <img src="assets/Quote Icon.png" class="w-10 h-10 md:w-12 md:h-12" alt="Quote Icon" />
+        <p class="text-gray-600 text-center text-sm md:text-base mt-2">
+          "Great service and amazing experience! Highly recommended."
+        </p>
+        <div class="mt-4 flex items-center gap-3">
+          <img src="https://randomuser.me/api/portraits/women/2.jpg" class="w-8 h-8 md:w-10 md:h-10 rounded-full" alt="User" />
+          <div>
+            <h4 class="text-gray-800 font-semibold text-sm md:text-base">Jane Doe</h4>
+            <div class="flex text-yellow-500 text-sm md:text-base">★★★★★</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- slide 6 -->
+    <div class="testimonial-slide flex-shrink-0 w-1/3 px-4">
+      <div class="bg-white p-6 rounded-2xl shadow-[0px_3px_3px_3px_rgba(0,0,0,0.15)] flex flex-col items-center justify-around">
+        <img src="assets/Quote Icon.png" class="w-10 h-10 md:w-12 md:h-12" alt="Quote Icon" />
+        <p class="text-gray-600 text-center text-sm md:text-base mt-2">
+          "Excellent quality and fast delivery! Will order again."
+        </p>
+        <div class="mt-4 flex items-center gap-3">
+          <img src="https://randomuser.me/api/portraits/men/3.jpg" class="w-8 h-8 md:w-10 md:h-10 rounded-full" alt="User" />
+          <div>
+            <h4 class="text-gray-800 font-semibold text-sm md:text-base">John Smith</h4>
+            <div class="flex text-yellow-500 text-sm md:text-base">★★★★★</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Indicator Dots -->
+  <div class="flex lg:mt-[150px] mt-20 items-center justify-center space-x-4 ">
+    <button class="dot-testimonial h-3 w-8 rounded-full" onclick="setSlide(0)"></button>
+    <button class="dot-testimonial h-3 w-3 bg-white rounded-full" onclick="setSlide(1)"></button>
+    <button class="dot-testimonial h-3 w-3 bg-white rounded-full" onclick="setSlide(2)"></button>
+    <button class="dot-testimonial h-3 w-3 bg-white rounded-full" onclick="setSlide(3)"></button>
+    <button class="dot-testimonial h-3 w-3 bg-white rounded-full" onclick="setSlide(4)"></button>
+    <button class="dot-testimonial h-3 w-3 bg-white rounded-full" onclick="setSlide(5)"></button>
+  </div>
+</div>
+</div>
+        </div>
+
+        <script>
+          const wrapper = document.getElementById("testimonialWrapper");
+const dots = document.querySelectorAll(".dot-testimonial");
+let index = 0;
+const totalSlides = dots.length;
+let autoSlide;
+
+function updateCarousel() {
+   wrapper.style.transition = "transform 0.5s ease-in-out"; // Smooth transition
+wrapper.style.transform = `translateX(-${index * 33}%)`;
+
+   dots.forEach((dot, i) => {
+       dot.classList.toggle("bg-[#9f6496]", i === index);
+       dot.classList.toggle("bg-white", i !== index);
+
+       // Adjust width for active and inactive dots
+       dot.classList.toggle("w-8", i === index); // Wider for active
+       dot.classList.toggle("w-3", i !== index); // Default for inactive
+   });
+}
+
+// Function to set the slide manually
+function setSlide(slideIndex) {
+   index = slideIndex;
+   updateCarousel();
+   resetAutoplay(); // Reset autoplay when manually changed
+}
+
+// Function for autoplay
+function startAutoplay() {
+   autoSlide = setInterval(() => {
+       index = (index + 1) % totalSlides; // Loop through slides
+       updateCarousel();
+   }, 3000); // Change slide every 3 seconds
+}
+
+// Function to reset autoplay when manually changed
+function resetAutoplay() {
+   clearInterval(autoSlide);
+   startAutoplay();
+}
+
+// Event listeners for dot navigation
+dots.forEach((dot, i) => {
+   dot.addEventListener("click", () => {
+       setSlide(i);
+   });
+});
+
+// Start autoplay when the page loads
+startAutoplay();
+         </script>
+       
+<!-- Other Courses Section -->
+<section class="bg-gray-100 py-16 px-10 relative">
+    
+  <div class="max-w-7xl mx-auto space-y-8 relative">
+   
+    <!-- Section Title -->
+    <h2 class="text-3xl font-semibold text-gray-800 lg:text-left text-center">
+Find Other Up-skill Courses    </h2>
+
+    <!-- Cards -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-8 ">
+      <!-- Card 1 -->
+      <div class="flex flex-col relative bg-white shadow-lg  overflow-hidden hover:shadow-xl">
+        <img src="assets/pic 2.png" alt="Cyber Forensic" class="w-full h-40 object-cover">
+        <div class="p-4 text-center h-40 flex flex-col justify-center align-center">
+          <h3 class="text-lg font-semibold text-gray-800">SELF PLACED COURSES</h3>
+        </div>
+        <!-- Plus Icon -->
+        <img src="./assets/Icon 2.png" class="absolute top-1/2 right-4 bg-[#9f6496] text-white rounded-full w-8 h-8 flex items-center justify-center -translate-y-1/2">
+      </div>
+      <!-- Card 2 -->
+      <div class="relative bg-white shadow-lg  overflow-hidden hover:shadow-xl">
+        <img src="assets/pic 3.png" alt="Digital Evidence" class="w-full h-40 object-cover">
+        <div class="p-4 text-center h-40 flex flex-col justify-center align-center">
+          <h3 class="text-lg font-semibold text-gray-800">SHORT TERM COURSES</h3>
+        </div>
+        <img src="./assets/Icon 2.png" class="absolute top-1/2 right-4 bg-[#9f6496] text-white rounded-full w-8 h-8  flex items-center justify-center -translate-y-1/2">
+      </div>
+      <!-- Card 3 -->
+      <div class="relative bg-white shadow-lg  overflow-hidden hover:shadow-xl">
+        <img src="assets/pic 4.png" alt="Cyber Crime" class="w-full h-40 object-cover">
+        <div class="p-4 text-center h-40 flex flex-col justify-center align-center">
+          <h3 class="text-lg font-semibold text-gray-800">CERTFICATION COURSES</h3>
+        </div>
+        <img src="./assets/Icon 2.png" class="absolute top-1/2 right-4 bg-[#9f6496] text-white rounded-full w-8 h-8 flex items-center justify-center -translate-y-1/2">
+      </div>
+      <!-- Card 4 -->
+      <div class="relative bg-white shadow-lg  overflow-hidden hover:shadow-xl z-30">
+        <img src="assets/pic 5.png" alt="Ethical Hacking" class="w-full h-40 object-cover">
+        <div class="p-4 text-center h-40 flex flex-col justify-center align-center ">
+          <h3 class="text-lg font-semibold text-gray-800">DIPLOMA COURSES</h3>
+        </div>
+        <img src="./assets/Icon 2.png" class="absolute top-1/2 right-4 bg-[#9f6496] text-white rounded-full w-8 h-8 flex items-center justify-center -translate-y-1/2">
+      </div>
+    </div>
+
+    <!-- View All Button -->
+    <div class="text-center mt-8">
+      <button class="bg-[#6365aa] text-white font-semibold px-6 py-3 rounded-full  hover:bg-purple-600">
+        view all courses
+      </button>
+    </div>
+  </div>
+</section>
+
+
+<!-- Career Guidance & Upcoming Events Section -->
+<section class="relative flex justify-center items-center min-h-[60vh] w-full mt-8 mb-10">
+  <div class="absolute top-0 bg-[#843c92] w-full z-10 transition-all duration-300 h-[65vh]  md:h-[32vh] sm:h-[78vh]"></div>
+  <div class="flex justify-around items-center w-[85%] z-20 flex-wrap gap-6 relative">
+      <div class="flex flex-col items-center justify-center bg-[#d191af] text-center w-[30rem] h-[20rem] md:w-[25rem] md:h-[25rem] lg:w-[25rem] lg:h-[25rem] shadow-[10px_-10px_white] p-8 sm:mt-[60px]">
+          <h1 class="text-white text-2xl md:text-3xl font-light">PERSONALIZED <br> CAREER GUIDANCE</h1>
+          <p class="text-black text-sm md:text-base mt-6">At Avanzo Academy, we believe in not just educating minds but empowering individuals to build fulfilling and successful careers. Your aspirations are unique, and so is our approach to guiding you towards a future filled with opportunities.</p>
+      </div>
+      <div class="flex flex-col justify-center relative sm:mt-[20px] lg:overflow-x  overflow-hidden lg:overflow-visible z-40">
+          <h1 class="text-white text-2xl md:text-3xl   font-( serif,Raleway:100) z-20 relative lg:-left-0 lg:-top-0 -top-[0px] left-[50px] py-[40px]">UPCOMING EVENTS</h1>
+          <div class="absolute w-[2px] h-[10rem] lg:h-[300px] bg-[#843c92]  left-2.5 transform -translate-x-1/2 top-4 z-21"></div>
+          <div class="flex items-center justify-start gap-4 max-w-[700px] w-[30rem] mt-[10px] relative z-10">
+              <div class="w-5 h-5 bg-[#843c92] rounded-full z-20 relative"></div>
+              <p class="text-lg md:text-base font-semibold">NEW COURSE PACKS ARRIVAL</p>
+          </div>
+          <div class="flex items-center justify-start gap-4 max-w-[700px] w-[30rem] mt-6 relative z-10">
+              <div class="w-5 h-5 bg-[#843c92] rounded-full z-20 relative"></div>
+              <p class="text-lg md:text-base font-semibold ">NEW BATCH ANNOUNCEMENT</p>
+          </div>
+      </div>
+  </div >
+      </section>
+      <!-- Recorded Webinars Section -->
+      <section class="bg-white py-20">
+        <div class="container mx-auto text-left ">
+            <h2 class="text-3xl font-bold text-gray-800 mb-4 px-[360px] max-md:px-2">Recorded Webinars</h2>
+            <p class="text-gray-600 mb-8 px-[360px] max-md:px-2">All presentation types will include live chat, Q&A, and polls.</p>
+
+            <div class="max-w-5xl mx-auto rounded-x">
+                <img src="assets/middleimg.png" alt="Screenshot of Webinar Presentation Types" class="w-full h-full block" />
+            </div>
+
+            <div class="mt-12">
+                <div class="bg-[#6365aa] rounded-full h-12 w-full max-w-sm mx-auto">
+                    <!-- Placeholder for button -->
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer class="bg-[#9f6496] text-white py-8 z-19">
+      <div class="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-4 px-4">
+        <!-- Quick Links -->
+        <div>
+          <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+          <ul class="space-y-2">
+            <li><a href="#" class="hover:underline">Home</a></li>
+            <li><a href="#" class="hover:underline">Courses</a></li>
+            <li><a href="#" class="hover:underline">Announcement</a></li>
+            <li><a href="#" class="hover:underline">virtual centre</a></li>
+            <li><a href="#" class="hover:underline">Industry</a></li>
+            <li><a href="#" class="hover:underline">Contact</a></li>
+          </ul>
+          <div class="flex items-center gap-4 mt-4">
+            <!-- Social Media Icons -->
+            <a href="https://facebook.com" target="_blank" class="text-white hover:text-black">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 5.1 3.84 9.3 8.77 9.95v-7.03H8.69v-2.92h2.08V9.6c0-2.07 1.23-3.22 3.11-3.22.9 0 1.85.16 1.85.16v2.04h-1.04c-1.03 0-1.34.64-1.34 1.29v1.54h2.28l-.36 2.92h-1.92v7.03C18.16 21.3 22 17.1 22 12z" />
+              </svg>
+            </a>
+            <a href="https://twitter.com" target="_blank" class="text-white hover:text-black">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M22.46 6c-.77.35-1.6.59-2.46.7a4.18 4.18 0 0 0 1.84-2.3 8.28 8.28 0 0 1-2.63 1 4.12 4.12 0 0 0-7.11 3.74 11.67 11.67 0 0 1-8.47-4.3 4.12 4.12 0 0 0 1.28 5.49 4.1 4.1 0 0 1-1.86-.51v.05a4.12 4.12 0 0 0 3.3 4 4.12 4.12 0 0 1-1.86.07 4.12 4.12 0 0 0 3.84 2.85 8.28 8.28 0 0 1-5.12 1.77c-.33 0-.65-.02-.97-.05a11.67 11.67 0 0 0 6.29 1.85c7.55 0 11.67-6.26 11.67-11.67v-.53c.8-.58 1.5-1.3 2.05-2.13z" />
+              </svg>
+            </a>
+            <a href="https://instagram.com" target="_blank" class="text-white hover:text-black">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M7.75 2h8.5C19.15 2 21 3.85 21 6.25v8.5c0 2.4-1.85 4.25-4.25 4.25h-8.5C3.85 19 2 17.15 2 14.75v-8.5C2 3.85 3.85 2 6.25 2zm5.25 4c-2.79 0-5 2.21-5 5s2.21 5 5 5 5-2.21 5-5-2.21-5-5-5zm-1.68 5c0-.93.75-1.68 1.68-1.68.93 0 1.68.75 1.68 1.68s-.75 1.68-1.68 1.68c-.93 0-1.68-.75-1.68-1.68zm6.18-4.53c.41 0 .75-.34.75-.75s-.34-.75-.75-.75-.75.34-.75.75.34.75.75.75z" />
+              </svg>
+            </a>
+            <a href="https://youtube.com" target="_blank" class="text-white hover:text-black">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M10 15l5.2-3-5.2-3z"></path>
+                <path d="M21.6 7.2s-.2-1.5-.8-2.2c-.7-.9-1.5-1-3.2-1.1C15.2 4 12 4 12 4s-3.2 0-5.6.2c-1.7.1-2.5.2-3.2 1.1-.6.7-.8 2.2-.8 2.2s-.2 1.8-.2 3.6v1.6c0 1.8.2 3.6.2 3.6s.2 1.5.8 2.2c.7.9 1.5 1 3.2 1.1 2.4.2 5.6.2 5.6.2s3.2 0 5.6-.2c1.7-.1 2.5-.2 3.2-1.1.6-.7.8-2.2.8-2.2s.2-1.8.2-3.6v-1.6c0-1.8-.2-3.6-.2-3.6z"></path>
+              </svg>
+            </a>
+            
+          </div>
+        </div> 
+
+        <div class="flex w-[200px]  flex-col align-center">
+          <img src="assets/girl.png" alt="">
+          <div class="px-3 py-2 bg-pink-400/50 rounded-2xl">
+          <p class="text-center text-white font-semibold">Name</p>
+          <p class="text-center text-white">Front Desk Staff</p>
+          </div>  
+        </div>
+    
+        <!-- Contact -->
+        <div>
+          <h3 class="text-lg font-semibold mb-4">Contact</h3>
+          <p>AVANZO CYBER INSTITUTE<br>NRA – 89, Whitefield,<br>Puthurkkara, Ayyanthole, Thrissur 680003</p>
+          <p class="mt-4">
+            <a href="tel:+917356111128" class="block hover:underline">+91 73561 11128</a>
+            <a href="mailto:info@avanzosolutions.in" class="block hover:underline">info@avanzosolutions.in</a>
+          </p>
+        </div>
+    
+        <!-- Find Us Here -->
+        <div class="text-center">
+      
+          <!-- Cyber Logo -->
+          <img src="assets/cyber.png" alt="Cyber Logo" class="w-24 h-20 mx-auto mb-4">
+      
+          <!-- <button class="px-6 md:px-8 py-3 md:py-4 bg-secondary text-white rounded-lg hover:bg-tertiary transition-colors">
+              Subscribe Now / 
+          </button> -->
+          <h3 class="text-lg font-semibold mb-4">Download CyberHulk</h3>
+
+      
+          <!-- Scanner Image -->
+          <img src="assets/scan.png" alt="Scanner" class="w-24 h-24 mx-auto mt-4">
+      </div>
+      
+       </footer>
+    
+    <div class="w-full h-10 flex justify-center items-center bg-[#d191af] text-center text-sm text-gray-200 mt-0 mb-0">
+      <p>
+        A unit of Avanzo Cyber Solutions | Designed by
+        <a href="https://avanzodesign.in" class="hover:underline text-white">avanzodesign.in</a>
+      </p>
+    </div>
+
+</body>
+</html>

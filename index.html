@@ -1,0 +1,1077 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avanzo Academy</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+  theme: {
+    extend: {
+      fontFamily: {
+        'poppins': ['Poppins', 'sans-serif'],
+        'raleway': ['Raleway', 'sans-serif'],
+        'roboto': ['Roboto', 'sans-serif'],
+        'mochiy': ['Mochiy Pop One', 'sans-serif'],
+      },
+      fontWeight: {
+        'poppins-100': 100,
+        'poppins-200': 200,
+        'poppins-300': 300,
+        'poppins-400': 400,
+        'poppins-500': 500,
+        'poppins-600': 600,
+        'poppins-700': 700,
+        'poppins-800': 800,
+        'poppins-900': 900,
+
+        'raleway-100':100,
+        'raleway-200':200,
+        'raleway-300':300,
+        'raleway-400':400,
+        'raleway-500':500,
+        'raleway-600':600,
+        'raleway-700':700,
+        'raleway-800':800,
+        'raleway-900':900,
+
+
+        'roboto-100': 100,
+        'roboto-300': 300,
+        'roboto-400': 400,
+        'roboto-500': 500,
+        'roboto-700': 700,
+        'roboto-900': 900,
+      },
+      colors: {
+        primary: '#9f6496',
+        secondary:'#6265ab',
+        terirory:'#e6e4e4'
+      }
+    }
+  }
+}
+    </script>
+    <!-- <link rel="stylesheet" href="input.css"> -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <style>
+        body {   
+            font-family: 'Raleway', sans-serif;
+            overflow-x: hidden;
+        }
+        .nav-menu {
+            transform: translateX(-100%);
+            transition: transform 0.3s ease-in-out;
+        }
+        .nav-menu.active {
+            transform: translateX(0);
+        }
+        .dot, .dot-expert, .dot-testimonial {
+      width: 10px;
+      height: 10px;
+      border-radius: 100%;
+      border: 1px solid rgb(66, 66, 66);
+      background-color: white; /* Gray-300 */
+      display: inline-block;
+      margin: 0 4px;
+      cursor: pointer;
+      transition: width 0.3s ease; /* Add transition for smooth effect */
+    }
+
+    .dot-testimonial{
+      border: 0.5px solid #9f6496;
+      background-color: #9f6496;
+    }
+
+    .dot.active, .dot-expert.active{
+      width: 80px; /* Make the active dot wider */
+      background-color: #000000;
+      border-radius: 20px; /* Darker color for active dot */
+    }
+    </style>
+</head>
+<body class="bg-white min-h-screen flex flex-col relative" style="background-image: url('/assets/images/BG vector.png'); background-size: cover; ">
+  <img class="hidden md:block absolute top-[-100px] w-[1000px] right-[-150px] z-20" src="assets/BG vector.png" alt="">
+  <img class="hidden md:block absolute top-[150vh] w-[600px]  right-[-250px] z-20" src="assets/BG vector.png" alt="">
+  <img class="hidden md:block absolute top-[210vh] w-[900px]  left-[-250px] z-20" src="assets/BG vector.png" alt="">
+  <img class="hidden md:block absolute top-[300vh] w-[900px]  right-[-250px] z-20" src="assets/BG vector.png" alt="">
+  <img class="hidden md:block absolute top-[490vh] w-[1100px] left-[-350px] z-20" src="assets/BG vector.png" alt="">
+  <!-- <img class="hidden md:block absolute top-[540vh] w-[900px]  right-[-400px] z-20 2xl:overflow-hidden" src="assets/BG vector.png" alt=""> -->
+    <!-- Header -->
+    <header class="relative px-4 md:px-6 py-4">
+        <div class="flex items-center  justify-between w-[90vw] mx-auto ">
+            <!-- Logo -->
+            <div class="z-20">
+<img src="assets/newlogo.png" alt="Avanzo Academy" class="h-[100px] w-[200px] object-cover">
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="menuBtn" class="z-30 md:hidden p-2">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"/>
+                </svg>
+            </button>
+
+            <!-- Desktop Navigation -->
+            <nav class="hidden lg:mx-30px md:flex flex-1 justify-center mr-[115px] z-20">
+                <div class="flex items-center gap-8">
+                    <a href="#" class="text-gray-800 hover:text-primary transition-colors">Home</a>
+                    <a href="/courses.html" class="text-gray-800 hover:text-primary transition-colors">Courses</a>
+                    <a href="/Announcement.html" class="text-gray-800 hover:text-primary transition-colors">Announcement</a>
+                    <a href="https://lms.avanzoacademy.in" class="text-white hover:text-black transition-colors">Virtual Centre</a>
+                    <a href="/industry.html" class="text-white hover:text-black transition-colors">Industry </a>
+                    <a href="#contact" class="text-white hover:text-black transition-colors">Contact</a>
+                </div>
+            </nav>
+
+            <!-- Sign In Button -->
+            <button class="z-20 hidden md:block px-8 py-2 bg-primary text-white rounded-full border border-white hover:bg-opacity-90 transition-colors"
+            onclick="window.location.href='https://lms.avanzoacademy.in';">
+            Sign in
+        </button>
+        
+        </div>
+
+        <!-- Mobile Navigation Menu -->
+        <div id="mobileMenu" class="nav-menu fixed top-0 left-0 h-full w-64 bg-white shadow-lg z-40 md:hidden">
+            <div class="p-4">
+                <button id="closeBtn" class="absolute top-4 right-4">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                    </svg>
+                </button>
+                <div class="flex flex-col gap-4 mt-12">
+                    <a href="#" class="text-gray-800 hover:text-primary transition-colors">Home</a>
+                    <a href="/courses.html" class="text-gray-800 hover:text-primary transition-colors">Courses</a>
+                    <a href="/Announcement.html" class="text-gray-800 hover:text-primary transition-colors">Announcement</a>
+                    <a href="/virtual.html" class="text-gray-800 hover:text-primary transition-colors">Virtual Centre</a>
+                    <a href="/industry.html" class="text-gray-800 hover:text-primary transition-colors">Industry</a>
+                    <a href="#contact" class="text-gray-800 hover:text-primary transition-colors">Contact</a>
+                    <button class="mt-4 px-6 py-2 bg-primary text-white rounded-full hover:bg-opacity-90 transition-colors">
+                        Sign in
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Overlay -->
+        <div id="overlay" class="fixed inset-0 bg-black opacity-50 z-30 hidden md:hidden"></div>
+
+        <!-- Purple Background -->
+        <div class="absolute right-0 top-0 w-1/2 h-full bg-primary" style="background-image: url('/assets/images/background.jpg'); background-size: cover;"></div>
+    </header>
+
+    <!-- Hero Section -->
+    <main class="relative flex-1 grid md:grid-cols-2 gap-8 md:gap-12 px-4 md:px-16 py-8 md:py-12">
+        <!-- Left Content -->
+        <div class="z-20 flex flex-col justify-center text-center md:text-left">
+            <h1 class="text-3xl md:text-5xl font-normal leading-normal mb-8 md:mb-12">
+              Avanzo Cyber Institute: From Learning to Career— <br>
+                <span class="drop-shadow-[2px_2px_0px_white] text-[#9f6496] font-bold text-5xl">Cybersecurity Excellence Awaits</span>
+            </h1>
+            <p>"Ready to shape your future in cybersecurity? At Avanzo Cyber Institute, we transform your passion for technology into a thriving cybersecurity career! Our expert-led courses and hands-on training will give you the tools to excel in this high-demand industry. Start your journey with us and claim your future in this ever expanding field."</p><br>
+
+            <!-- Search Bar -->
+            <div class="flex flex-col sm:flex-row w-full gap-4 sm:gap-0">
+                <div class="relative flex-1">
+                    <svg class="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                    </svg>
+                    <input
+                        type="text"
+                        placeholder="Keywords of your Course"
+                        class="w-full pl-12 md:pl-14 pr-4 md:pr-6 py-3 md:py-4 rounded-lg sm:rounded-l-lg bg-gray-200 sm:rounded-r-none border border-gray-200 focus:outline-none focus:border-primary"
+                    >
+                </div>
+                <button class="px-6 md:px-8 py-3 md:py-4 bg-primary text-white rounded-lg sm:rounded-l-none sm:rounded-r-lg hover:bg-opacity-90 transition-colors">
+                    Search Course
+                </button>
+            </div>
+        </div>
+
+        <!-- Right Content -->
+        <div class="relative w-full h-full flex items-center justify-center">
+           
+            <img
+              class="relative z-20 w-full h-auto max-w-full rounded-3xl"
+              src="assets/woman1.png"
+              alt="Professional Woman"
+            />
+          </div>
+      
+
+        <!-- Purple Background -->
+        <div class="absolute right-0 top-0 w-1/2 h-[90%] bg-primary rounded-bl-[100px]"></div>
+    </main>
+
+    <script>
+        const menuBtn = document.getElementById('menuBtn');
+        const closeBtn = document.getElementById('closeBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const overlay = document.getElementById('overlay');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.add('active');
+            overlay.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        });
+
+        function closeMenu() {
+            mobileMenu.classList.remove('active');
+            overlay.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+
+        closeBtn.addEventListener('click', closeMenu);
+        overlay.addEventListener('click', closeMenu);
+    </script>
+</body>
+</html>
+  
+
+<section class="relative w-full max-w-2xl mx-auto text-center px-8 overflow-x-hidden ">
+  <div class="flex transition-transform duration-500 ease-in-out  " id="slider-container">
+    <!-- Slide 1 -->
+    <div class="slide w-full flex-shrink-0 overflow-x-hidden">
+      <h2 class="text-3xl font-light text-gray-800">Welcome</h2>
+      <div class="mt-5 text-black text-lg leading-relaxed relative">
+        <img src="assets/Quote Icon.png" alt="Quote Icon" class="w-11 h-11 ml-10">
+        <p class="px-6">Lorem ipsum dolor sit amet consectetur adipisicing elit...</p>
+      </div>
+      <div class="mt-0">
+        <img src="assets/Dhanya Menon Signature.png" alt="Signature" class="h-[60px] md:h-[100px] w-41 mx-auto opacity-100">
+        <p class="text-sm text-black mt-3">India’s First Woman Cybercrime Investigator</p>
+      </div>
+    </div>
+
+    <!-- Duplicate Slide 2 -->
+    <div class="slide w-full flex-shrink-0 overflow-x-hidden">
+      <h2 class="text-3xl font-light text-gray-800">Welcome</h2>
+      <div class="mt-5 text-black text-lg leading-relaxed relative">
+        <img src="assets/Quote Icon.png" alt="Quote Icon" class="w-12 h-12 ml-10">
+        <p class="px-6">Lorem ipsum dolor sit amet consectetur adipisicing elit...</p>
+      </div>
+      <div class="mt-0">
+        <img src="assets/Dhanya Menon Signature.png" alt="Signature" class="h-[60px] md:h-[100px] w-41 mx-auto opacity-100">
+        <p class="text-sm text-black mt-3">India’s First Woman Cybercrime Investigator</p>
+      </div>
+    </div>
+
+    <!-- Duplicate Slide 3 -->
+    <div class="slide w-full flex-shrink-0">
+      <h2 class="text-3xl font-light text-gray-800">Welcome</h2>
+      <div class="mt-5 text-black text-lg leading-relaxed relative">
+        <img src="assets/Quote Icon.png" alt="Quote Icon" class="w-12 h-12 ml-10">
+        <p class="px-6">Lorem ipsum dolor sit amet consectetur adipisicing elit...</p>
+      </div>
+      <div class="mt-0">
+        <img src="assets/Dhanya Menon Signature.png" alt="Signature" class="h-[60px] md:h-[100px] w-41 mx-auto opacity-100">
+        <p class="text-sm text-black mt-3">India’s First Woman Cybercrime Investigator</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navigation Dots -->
+  <div class="flex justify-center space-x-2 mt-6 mb-12">
+    <span class="dot w-8 h-3 bg-black rounded-full" onclick="moveSlide(0)"></span>
+    <span class="dot w-3 h-3 bg-gray-400 rounded-full" onclick="moveSlide(1)"></span>
+    <span class="dot w-3 h-3 bg-gray-400 rounded-full" onclick="moveSlide(2)"></span>
+  </div>
+</section>
+
+<script>
+  let currentIndex = 0;
+  const slides = document.querySelectorAll(".slide");
+  const sliderContainer = document.getElementById("slider-container");
+
+  function moveSlide(index) {
+    currentIndex = index;
+    const translateX = -index * 100;
+    sliderContainer.style.transform = `translateX(${translateX}%)`;
+
+    document.querySelectorAll(".dot").forEach((dot, i) => {
+  dot.classList.toggle("bg-black", i === index);
+  dot.classList.toggle("bg-gray-400", i !== index);
+
+  // Adjust width for active and inactive dots
+  dot.classList.toggle("w-8", i === index); // Wider for active
+  dot.classList.toggle("w-3", i !== index); // Default for inactive
+});
+
+  }
+</script>
+
+      <section class="flex min-h-screen w-full bg-[#d191af] m-0 p-0 box-border overflow-hidden">
+        <div class="relative w-full h-full">
+            <!-- Slider Container -->
+            <div class="flex transition-transform duration-500 ease-in-out" id="slider-container-expert">
+                <!-- Slide 1 -->
+                <div class="slideExpert flex-shrink-0 w-full h-full">
+                    <div class="flex flex-col md:flex-row relative">
+                        
+                        <div class="relative w-full md:w-[38vw] h-[50vh] md:h-auto">
+                            <img class="h-[45vh] md:block absolute top-0 left-0 md:h-[90vh] z-10" src="assets/shape 2.png" alt="">
+                            <img class="absolute top-[5vh] lg:top-[15vh] left-1/2 transform -translate-x-1/2 lg:left-[6vw] lg:-translate-x-1/6 lg:ml-[300px] h-[40vh] lg:h-[85vh] z-20" 
+                            src="assets/woman 2.png" alt="">
+
+                            
+                            
+                        </div>
+                        <div class="relative flex flex-col items-center">
+                            <h1 class="mt-8 md:mt-[90px] ml-0 md:ml-[6vw] text-3xl md:text-[40px] font-light text-white/70 text-center md:text-left">
+                                Meet The Mentors
+                            </h1>
+                            <div class="md:absolute top-[11vh] left-[10px] mt-8 md:mt-[100px] flex flex-col justify-end items-center md:items-start w-full md:w-[70vw] h-auto md:h-[60vh] bg-[#9f6496] rounded-[20px] p-6">
+                                <h3 class="font-bold text-white text-4xl md:text-[55px] ml-0 md:ml-[6vw] m-0 text-center md:text-left">ANKIT FADIA</h3>
+                                <p class="ml-0 mt-2 md:ml-[6vw] text-white/70 text-lg md:text-[20px] font-light text-center md:text-left">Computer Security Expert</p>
+                                
+                                <p class="ml-0 mt-2 md:ml-[6vw] text-white/80 text-lg md:text-[18px] font-light text-center md:text-left">
+                                  Based in San Francisco, USA | Available for mentorship globally |20+ years in Cyber Security
+                              </p>
+                              <p class="ml-0 mt-2 md:ml-[6vw] text-white/80 text-lg md:text-[18px] font-light text-center md:text-left">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit.  </p>
+                              
+                                <div class="ml-0 md:ml-[6vw] mt-[20px] flex flex md:flex-row gap-4">
+  <a href="tutor.html"> <!-- Replace "tutor.html" with your tutor page URL -->
+    <button class="bg-[#d191af] px-6 py-3 md:px-[20px] md:py-[10px] mb-4 md:mb-[80px] border-none text-white/80 h-o hover:text-primary">
+        Join now
+    </button>
+</a>                                    
+<button class="bg-[#d191af] px-6 py-3 md:px-[20px] md:py-[10px] mb-4 md:mb-[80px] border-none text-white/80 hover:text-primary">Share now</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 2 -->
+                <div class="slideExpert flex-shrink-0 w-full h-full">
+                  <div class="flex flex-col md:flex-row relative">
+                    
+                      <div class="relative w-full md:w-[38vw] h-[50vh] md:h-auto">
+                          <img class="h-[45vh] md:block absolute top-0 left-0 md:h-[90vh] z-10" src="assets/shape 2.png" alt="">
+                          <img class="absolute top-[5vh] lg:top-[15vh] left-1/2 transform -translate-x-1/2 lg:left-[6vw] lg:-translate-x-1/6 lg:ml-[300px] h-[40vh] lg:h-[85vh] z-20" 
+                          src="assets/woman 2.png" alt="">
+
+                          
+                          
+                      </div>
+                      <div class="relative flex flex-col items-center">
+                          <h1 class="mt-8 md:mt-[90px] ml-0 md:ml-[6vw] text-3xl md:text-[40px] font-light text-white/70 text-center md:text-left">
+                            Meet The Mentors
+                          </h1>
+                          <div class="md:absolute top-[11vh] left-[10px] mt-8 md:mt-[100px] flex flex-col justify-end items-center md:items-start w-full md:w-[70vw] h-auto md:h-[60vh] bg-[#9f6496] rounded-[20px] p-6">
+                              <h3 class="font-bold text-white text-4xl md:text-[55px] ml-0 md:ml-[6vw] m-0 text-center md:text-left">ANKIT FADIA</h3>
+                              <p class="ml-0 mt-2 md:ml-[6vw] text-white/70 text-lg md:text-[20px] font-light text-center md:text-left">Computer Security Expert</p>
+                              <p class="ml-0 mt-2 md:ml-[6vw] text-white/80 text-lg md:text-[18px] font-light text-center md:text-left">
+                                Based in San Francisco, USA | Available for mentorship globally |20+ years in Cyber Security
+                            </p>
+                            <p class="ml-0 mt-2 md:ml-[6vw] text-white/80 text-lg md:text-[18px] font-light text-center md:text-left">
+Lorem ipsum dolor sit amet consectetur adipisicing elit.                     </p>
+                              <div class="ml-0 md:ml-[6vw] mt-[20px] flex flex md:flex-row gap-4">
+<a href="tutor.html"> <!-- Replace "tutor.html" with your tutor page URL -->
+    <button class="bg-[#d191af] px-6 py-3 md:px-[20px] md:py-[10px] mb-4 md:mb-[80px] border-none text-white/80">
+        Join now
+    </button>
+</a>                                  <button class="bg-[#d191af] px-6 py-3 md:px-[20px] md:py-[10px] mb-4 md:mb-[80px] border-none text-white/80">Share now</button>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+
+              <!-- Slide 3 -->
+              <div class="slideExpert flex-shrink-0 w-full h-full">
+                <div class="flex flex-col md:flex-row relative">
+                 
+                    <div class="relative w-full md:w-[38vw] h-[50vh] md:h-auto">
+                        <img class="h-[45vh] md:block absolute top-0 left-0 md:h-[90vh] z-10" src="assets/shape 2.png" alt="">
+                        <img class="absolute top-[5vh] lg:top-[15vh] left-1/2 transform -translate-x-1/2 lg:left-[6vw] lg:-translate-x-1/6 lg:ml-[300px] h-[40vh] lg:h-[85vh] z-40" 
+                        src="assets/woman 2.png" alt="">
+
+                        
+                        
+                    </div>
+                    <div class="relative flex flex-col items-center">
+                        <h1 class="mt-8 md:mt-[90px] ml-0 md:ml-[6vw] text-3xl md:text-[40px] font-light text-white/70 text-center md:text-left">
+                          Meet The Mentors
+                        </h1>
+                        <div class="md:absolute top-[11vh] left-[10px] mt-8 md:mt-[100px] flex flex-col justify-end items-center md:items-start w-full md:w-[70vw] h-auto md:h-[60vh] bg-[#9f6496] rounded-[20px] p-6">
+                            <h3 class="font-bold text-white text-4xl md:text-[55px] ml-0 md:ml-[6vw] m-0 text-center md:text-left">ANKIT FADIA</h3>
+                            <p class="ml-0 mt-2 md:ml-[6vw] text-white/70 text-lg md:text-[20px] font-light text-center md:text-left">Computer Security Expert</p>
+                            <p class="ml-0 mt-2 md:ml-[6vw] text-white/80 text-lg md:text-[18px] font-light text-center md:text-left">
+                              Based in San Francisco, USA | Available for mentorship globally |20+ years in Cyber Security
+                          </p>
+                          <p class="ml-0 mt-2 md:ml-[6vw] text-white/80 text-lg md:text-[18px] font-light text-center md:text-left">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit.   </p>
+                            <div class="ml-0 md:ml-[6vw] mt-[20px] flex flex md:flex-row gap-4">
+<a href="tutor.html"> <!-- Replace "tutor.html" with your tutor page URL -->
+    <button class="bg-[#d191af] px-6 py-3 md:px-[20px] md:py-[10px] mb-4 md:mb-[80px] border-none text-white/80">
+        Join now
+    </button>
+</a>                                <button class="bg-[#d191af] px-6 py-3 md:px-[20px] md:py-[10px] mb-4 md:mb-[80px] border-none text-white/80">Share now</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+          </div>
+          <div class="flex justify-center absolute top-[100vh] md:top-[95vh] lg:top-[95vh] left-1/2 transform -translate-x-1/2 rounded-full">
+            <span class="dot-expert w-8 h-3 bg-black rounded-full" onclick="moveSlideExpert()"></span>
+            <span class="dot-expert w-3 h-3 rounded-full" onclick="moveSlideExpert()"></span>
+            <span class="dot-expert w-3 h-3 rounded-full" onclick="moveSlideExpert()"></span>
+        </div>
+            
+
+            <!-- Dots Navigation -->
+             
+         </div>   
+    </section>
+
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+    let currentIndexExpert = 0;
+    const slidesExpert = document.querySelectorAll(".slideExpert");
+    const sliderContainerExpert = document.getElementById("slider-container-expert");
+    const dotsExpert = document.querySelectorAll(".dot-expert");
+
+    function moveSlideExpert(index) {
+        currentIndexExpert = index;
+        const translateX = -index * 100;
+        sliderContainerExpert.style.transform = `translateX(${translateX}%)`;
+
+        dotsExpert.forEach((dot, i) => {
+            if (i === index) {
+                dot.classList.add("bg-black", "w-8"); // Active dot: Black & Longer
+                dot.classList.remove("bg-white-400", "w-3");
+            } else {
+                dot.classList.add("bg-white-400", "w-3"); // Inactive dot: Gray & Shorter
+                dot.classList.remove("bg-black", "w-8");
+            }
+        });
+    }
+
+    function autoSlideExpert() {
+        setInterval(() => {
+            currentIndexExpert = (currentIndexExpert + 1) % slidesExpert.length;
+            moveSlideExpert(currentIndexExpert);
+        }, 5000); // Auto-slide every 5 seconds
+    }
+
+    dotsExpert.forEach((dot, index) => {
+        dot.addEventListener("click", () => {
+            moveSlideExpert(index);
+        });
+    });
+
+    autoSlideExpert(); // Start auto-slide
+});
+
+    </script>
+    
+  
+    <!-- <div class="flex items-center  px-10 py-16 min-h-80 justify-around z-21"> -->
+        <!-- Left Content -->
+        <!-- <div class="max-w-lg z-21">
+          <h1 class="text-4xl font-bold text-gray-900">CYBERSECURITY FOUNDATION COURSE</h1>
+          <div class="mt-6 flex space-x-4">
+            <button class="bg-[#9f6496] text-white px-6 py-3 rounded-lg shadow-md hover:bg-black z-21">Join Now</button>
+            <button class="bg-[#9f6496] text-white px-6 py-3 rounded-lg shadow-md hover:bg-black z-21">Share Now</button>
+          </div>
+        </div>
+       -->
+        <!-- Right Side Image -->
+        <!-- <div class="relative w-80 ml-10 ">
+          <img src="assets/pic 1.png" alt="Cybersecurity Shield" class="rounded-lg">
+          <div class="absolute inset-0"></div>
+        </div>
+      </div> -->
+
+      <div class="lg:flex xl:flex md:flex flex lg:flex-row xl:flex-row md:flex-row  flex-col px-10 py-16 min-h-80 justify-around z-21">
+        <!-- Left Content -->
+        <div class="max-w-lg z-21 ">
+          <h1 class="text-4xl font-bold text-gray-900">CYBERSECURITY FOUNDATION COURSE</h1>
+          <div class="mt-6 flex space-x-4">
+            <!-- <button class="bg-[#9f6496] text-white px-6 py-3  shadow-md hover:bg-black z-21">Join Now</button> -->
+           <a href="course1.html"
+   class="inline-block bg-[#9f6496] text-white px-6 py-3 shadow-md hover:bg-[#8a5883] z-21 text-center"
+   role="button">
+  Join Now
+</a>
+            <button class="bg-[#9f6496] text-white px-6 py-3  shadow-md hover:bg-[#8a5883] z-21">Share Now</button>
+          </div>
+        </div>
+      
+        <!-- Right Side Image -->
+        <div class="relative w-80 lg:ml-10 ">
+          <img src="assets/pic 1.png" alt="Cybersecurity Shield" class="rounded-lg">
+          <div class="absolute inset-0"></div>
+        </div>
+      </div>
+      
+
+  
+        <!-- Other Courses Section -->
+<section class="bg-gray-100 py-16 px-10 relative">
+    
+  <div class="max-w-7xl mx-auto space-y-8 relative">
+   
+    <!-- Section Title -->
+    <h2 class="text-3xl font-semibold text-gray-800 lg:text-left text-center">
+       Courses Offer
+    </h2>
+    <div class="hidden lg:block absolute top-[-10px] left-[250px] h-[2px] bg-purple-500 w-[50vw] mx-auto"></div>
+
+    <!-- Cards -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-8 ">
+      <!-- Card 1 -->
+      <div class="flex flex-col relative bg-white shadow-lg  overflow-hidden hover:shadow-xl">
+        <img src="assets/pic 2.png" alt="Cyber Forensic" class="w-full h-40 object-cover">
+        <div class="p-4 text-center h-40 flex flex-col justify-center align-center">
+          <h3 class="text-lg font-semibold text-gray-800">MASTER CLASS</h3>
+        </div>
+        <!-- Plus Icon -->
+<!-- Replace the img tag with this: -->
+<a
+  href="course1.html"
+  class="absolute top-1/2 right-4 -translate-y-1/2 transform 
+         bg-[#9f6496] text-white 
+         px-3 py-2 md:px-4 md:py-2 
+         text-sm font-medium
+         rounded-md 
+         shadow-md
+         hover:bg-[#8a5883] focus:outline-none focus:ring-2 focus:ring-[#b97c9a] focus:ring-opacity-75
+         transition-colors duration-150 ease-in-out"
+  role="button"
+>
+  Know more
+</a>     
+ </div>
+      <!-- Card 2 -->
+      <div class="relative bg-white shadow-lg  overflow-hidden hover:shadow-xl">
+        <img src="assets/pic 3.png" alt="Digital Evidence" class="w-full h-40 object-cover">
+        <div class="p-4 text-center h-40 flex flex-col justify-center align-center">
+          <h3 class="text-lg font-semibold text-gray-800">COMPREHENSIVE COURSES</h3>
+        </div>
+<!-- Replace the img tag with this: -->
+<a
+  href="course1.html"
+  class="absolute top-1/2 right-4 -translate-y-1/2 transform 
+         bg-[#9f6496] text-white 
+         px-3 py-2 md:px-4 md:py-2 
+         text-sm font-medium
+         rounded-md 
+         shadow-md
+         hover:bg-[#8a5883] focus:outline-none focus:ring-2 focus:ring-[#b97c9a] focus:ring-opacity-75
+         transition-colors duration-150 ease-in-out"
+  role="button"
+>
+  Know more
+</a>     
+ </div>
+      <!-- Card 3 -->
+      <div class="relative bg-white shadow-lg  overflow-hidden hover:shadow-xl">
+        <img src="assets/pic 4.png" alt="Cyber Crime" class="w-full h-40 object-cover">
+        <div class="p-4 text-center h-40 flex flex-col justify-center align-center">
+          <h3 class="text-lg font-semibold text-gray-800">MICRO MASTERY</h3>
+        </div>
+<a
+  href="course1.html"
+  class="absolute top-1/2 right-4 -translate-y-1/2 transform 
+         bg-[#9f6496] text-white 
+         px-3 py-2 md:px-4 md:py-2 
+         text-sm font-medium
+         rounded-md 
+         shadow-md
+         hover:bg-[#8a5883] focus:outline-none focus:ring-2 focus:ring-[#b97c9a] focus:ring-opacity-75
+         transition-colors duration-150 ease-in-out"
+  role="button"
+>
+  Know more
+</a>
+      </div>
+      <!-- Card 4 -->
+      <div class="relative bg-white shadow-lg  overflow-hidden hover:shadow-xl z-30">
+        <img src="assets/pic 5.png" alt="Ethical Hacking" class="w-full h-40 object-cover">
+        <div class="p-4 text-center h-40 flex flex-col justify-center align-center ">
+          <h3 class="text-lg font-semibold text-gray-800">DIPLOMA COURSES</h3>
+        </div>
+<a
+  href="course1.html"
+  class="absolute top-1/2 right-4 -translate-y-1/2 transform 
+         bg-[#9f6496] text-white 
+         px-3 py-2 md:px-4 md:py-2 
+         text-sm font-medium
+         rounded-md 
+         shadow-md
+         hover:bg-[#8a5883] focus:outline-none focus:ring-2 focus:ring-[#b97c9a] focus:ring-opacity-75
+         transition-colors duration-150 ease-in-out"
+  role="button"
+>
+  Know more
+</a>      
+</div>
+    </div>
+
+    <!-- View All Button -->
+    <div class="text-center mt-8">
+      <a href="courses.html" class="bg-[#9f6496] text-white font-semibold px-6 py-3 hover:bg-[#8a5883] inline-block text-center">
+  View All Courses
+</a>
+    </div>
+  </div>
+</section>
+
+<div>
+  <div class="flex justify-center items-end bg-[#d191af] lg:h-[80px] py-5 text-center">
+      <h2 class="text-white text-2xl md:text-3xl">Collaborations</h2>
+  </div>
+
+  <div class="bg-white py-8">
+      <!-- Logo Carousel Wrapper -->
+      <div class="relative max-w-6xl mx-auto overflow-hidden">
+          <div id="logoSlider" class="flex justify-center items-center gap-10 transition-transform duration-500">
+              <img src="assets/Logo.png" alt="Elite" class="h-20">
+              <img src="assets/Logo.png" alt="AVIT" class="h-20">
+              <img src="assets/Logo.png" alt="AIMS Group" class="h-20">
+              <img src="assets/Logo.png" alt="Velammal College" class="h-20">
+              <img src="assets/Logo.png" alt="Elite" class="h-20">
+              <img src="assets/Logo.png" alt="AVIT" class="h-20">
+              <img src="assets/Logo.png" alt="AIMS Group" class="h-20">
+              <img src="assets/Logo.png" alt="Velammal College" class="h-20">
+          </div>
+      </div>
+  </div>
+
+  <!-- Navigation Buttons -->
+<div class="flex justify-center mt-6 space-x-4">
+  <button id="prevBtn" class="p-3 h-10 flex justify-center items-center bg-[#9f6496] rounded-lg text-white hover:bg-[#9f6496]">
+      <span class="text-xl">&lt;</span>
+  </button>
+  <button id="nextBtn" class="p-3 h-10 flex justify-center items-center bg-[#9f6496] rounded-lg text-white hover:bg-[#9f6496]">
+      <span class="text-xl">&gt;</span>
+  </button>
+</div>
+
+</div>
+
+<script>
+  const slider = document.getElementById('logoSlider');
+  let translateX = 0;
+  const step = 180; // Adjust for smooth sliding
+  const maxTranslateX = -step * 4; // Adjust based on the number of images
+
+  function slideNext() {
+      translateX -= step;
+      if (translateX < maxTranslateX) translateX = 0;
+      slider.style.transform = `translateX(${translateX}px)`;
+    }
+
+  function slidePrev() {
+      translateX += step;
+      if (translateX > 0) translateX = maxTranslateX;
+      slider.style.transform = `translateX(${translateX}px)`;
+    }
+
+  document.getElementById('nextBtn').addEventListener('click', slideNext);
+  document.getElementById('prevBtn').addEventListener('click', slidePrev);
+
+  // Auto-scroll every 3 seconds
+  setInterval(slideNext, 3000);
+</script>
+
+      <div class="container mx-auto py-12 relative mb-0">
+            <!-- Background Vector -->
+            
+          
+            <div class="relative w-full md:w-[80vw]   py-10 mx-auto rounded-3xl overflow-hidden">
+              <h2 class="text-center lg:ml-[80px] lg:text-left text-3xl font-light text-gray-700 md:text-center mb-0 relative z-30">Testimonials</h2>
+  <div class="flex flex-col items-center w-full md:w-[80vw] py-10 relative mx-auto rounded-3xl overflow-hidden z-10" >
+
+    <!-- Background Shape (Visible on Desktop Only) -->
+    <div class="hidden md:block absolute top-1 left-1/2 transform -translate-x-1/2 w-[70vw] h-[350px] bg-[#9f6496] z-[-1] "></div>
+        
+
+    <!-- Testimonial Container -->
+    <div id="testimonialWrapper" class="flex transition-transform duration-500 ease-in-out  mt:0px md:mt-[30px] lg:mt-[38px] z-30">      <!-- slide 1 -->
+      <div class="testimonial-slide flex-shrink-0 w-1/3 px-4">
+        <div class="bg-white p-6 rounded-2xl shadow-[0px_3px_3px_3px_rgba(0,0,0,0.15)] flex flex-col items-center justify-around">
+          <img src="assets/Quote Icon.png" class="w-10 h-10 md:w-12 md:h-12" alt="Quote Icon" />
+          <p class="text-gray-600 text-center text-sm md:text-base mt-2">
+            "Great service and amazing experience! Highly recommended."
+          </p>
+          <div class="mt-4 flex items-center gap-3">
+            <img src="https://randomuser.me/api/portraits/women/2.jpg" class="w-8 h-8 md:w-10 md:h-10 rounded-full" alt="User" />
+            <div>
+              <h4 class="text-gray-800 font-semibold text-sm md:text-base">Jane Doe</h4>
+              <div class="flex text-yellow-500 text-sm md:text-base">★★★★★</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- slide 2 -->
+      <div class="testimonial-slide flex-shrink-0 w-1/3 px-4">
+        <div class="bg-white p-6 rounded-2xl shadow-[0px_3px_3px_3px_rgba(0,0,0,0.15)] flex flex-col items-center justify-around">
+          <img src="assets/Quote Icon.png" class="w-10 h-10 md:w-12 md:h-12" alt="Quote Icon" />
+          <p class="text-gray-600 text-center text-sm md:text-base mt-2">
+            "Great service and amazing experience! Highly recommended."
+          </p>
+          <div class="mt-4 flex items-center gap-3">
+            <img src="https://randomuser.me/api/portraits/women/2.jpg" class="w-8 h-8 md:w-10 md:h-10 rounded-full" alt="User" />
+            <div>
+              <h4 class="text-gray-800 font-semibold text-sm md:text-base">Jane Doe</h4>
+              <div class="flex text-yellow-500 text-sm md:text-base">★★★★★</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- slide 3 -->
+      <div class="testimonial-slide flex-shrink-0 w-1/3 px-4">
+        <div class="bg-white p-6 rounded-2xl shadow-[0px_3px_3px_3px_rgba(0,0,0,0.15)] flex flex-col items-center justify-around">
+          <img src="assets/Quote Icon.png" class="w-10 h-10 md:w-12 md:h-12" alt="Quote Icon" />
+          <p class="text-gray-600 text-center text-sm md:text-base mt-2">
+            "Great service and amazing experience! Highly recommended."
+          </p>
+          <div class="mt-4 flex items-center gap-3">
+            <img src="https://randomuser.me/api/portraits/women/2.jpg" class="w-8 h-8 md:w-10 md:h-10 rounded-full" alt="User" />
+            <div>
+              <h4 class="text-gray-800 font-semibold text-sm md:text-base">Jane Doe</h4>
+              <div class="flex text-yellow-500 text-sm md:text-base">★★★★★</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- slide 4 -->
+      <div class="testimonial-slide flex-shrink-0 w-1/3 px-4">
+        <div class="bg-white p-6 rounded-2xl shadow-[0px_3px_3px_3px_rgba(0,0,0,0.15)] flex flex-col items-center justify-around">
+          <img src="assets/Quote Icon.png" class="w-10 h-10 md:w-12 md:h-12" alt="Quote Icon" />
+          <p class="text-gray-600 text-center text-sm md:text-base mt-2">
+            "Great service and amazing experience! Highly recommended."
+          </p>
+          <div class="mt-4 flex items-center gap-3">
+            <img src="https://randomuser.me/api/portraits/women/2.jpg" class="w-8 h-8 md:w-10 md:h-10 rounded-full" alt="User" />
+            <div>
+              <h4 class="text-gray-800 font-semibold text-sm md:text-base">Jane Doe</h4>
+              <div class="flex text-yellow-500 text-sm md:text-base">★★★★★</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- slide 5 -->
+      <div class="testimonial-slide flex-shrink-0 w-1/3 px-4">
+        <div class="bg-white p-6 rounded-2xl shadow-[0px_3px_3px_3px_rgba(0,0,0,0.15)] flex flex-col items-center justify-around">
+          <img src="assets/Quote Icon.png" class="w-10 h-10 md:w-12 md:h-12" alt="Quote Icon" />
+          <p class="text-gray-600 text-center text-sm md:text-base mt-2">
+            "Great service and amazing experience! Highly recommended."
+          </p>
+          <div class="mt-4 flex items-center gap-3">
+            <img src="https://randomuser.me/api/portraits/women/2.jpg" class="w-8 h-8 md:w-10 md:h-10 rounded-full" alt="User" />
+            <div>
+              <h4 class="text-gray-800 font-semibold text-sm md:text-base">Jane Doe</h4>
+              <div class="flex text-yellow-500 text-sm md:text-base">★★★★★</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- slide 6 -->
+      <div class="testimonial-slide flex-shrink-0 w-1/3 px-4">
+        <div class="bg-white p-6 rounded-2xl shadow-[0px_3px_3px_3px_rgba(0,0,0,0.15)] flex flex-col items-center justify-around">
+          <img src="assets/Quote Icon.png" class="w-10 h-10 md:w-12 md:h-12" alt="Quote Icon" />
+          <p class="text-gray-600 text-center text-sm md:text-base mt-2">
+            "Excellent quality and fast delivery! Will order again."
+          </p>
+          <div class="mt-4 flex items-center gap-3">
+            <img src="https://randomuser.me/api/portraits/men/3.jpg" class="w-8 h-8 md:w-10 md:h-10 rounded-full" alt="User" />
+            <div>
+              <h4 class="text-gray-800 font-semibold text-sm md:text-base">John Smith</h4>
+              <div class="flex text-yellow-500 text-sm md:text-base">★★★★★</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Indicator Dots -->
+    <div class="flex lg:mt-[150px] mt-20 items-center justify-center space-x-4 ">
+      <button class="dot-testimonial h-3 w-8 rounded-full" onclick="setSlide(0)"></button>
+      <button class="dot-testimonial h-3 w-3 bg-white rounded-full" onclick="setSlide(1)"></button>
+      <button class="dot-testimonial h-3 w-3 bg-white rounded-full" onclick="setSlide(2)"></button>
+      <button class="dot-testimonial h-3 w-3 bg-white rounded-full" onclick="setSlide(3)"></button>
+      <button class="dot-testimonial h-3 w-3 bg-white rounded-full" onclick="setSlide(4)"></button>
+      <button class="dot-testimonial h-3 w-3 bg-white rounded-full" onclick="setSlide(5)"></button>
+    </div>
+  </div>
+</div>
+          </div>
+
+          <script>
+            const wrapper = document.getElementById("testimonialWrapper");
+ const dots = document.querySelectorAll(".dot-testimonial");
+ let index = 0;
+ const totalSlides = dots.length;
+ let autoSlide;
+ 
+ function updateCarousel() {
+     wrapper.style.transition = "transform 0.5s ease-in-out"; // Smooth transition
+wrapper.style.transform = `translateX(-${index * 33}%)`;
+ 
+     dots.forEach((dot, i) => {
+         dot.classList.toggle("bg-[#9f6496]", i === index);
+         dot.classList.toggle("bg-white", i !== index);
+ 
+         // Adjust width for active and inactive dots
+         dot.classList.toggle("w-8", i === index); // Wider for active
+         dot.classList.toggle("w-3", i !== index); // Default for inactive
+     });
+ }
+ 
+ // Function to set the slide manually
+ function setSlide(slideIndex) {
+     index = slideIndex;
+     updateCarousel();
+     resetAutoplay(); // Reset autoplay when manually changed
+ }
+ 
+ // Function for autoplay
+ function startAutoplay() {
+     autoSlide = setInterval(() => {
+         index = (index + 1) % totalSlides; // Loop through slides
+         updateCarousel();
+     }, 3000); // Change slide every 3 seconds
+ }
+ 
+ // Function to reset autoplay when manually changed
+ function resetAutoplay() {
+     clearInterval(autoSlide);
+     startAutoplay();
+ }
+ 
+ // Event listeners for dot navigation
+ dots.forEach((dot, i) => {
+     dot.addEventListener("click", () => {
+         setSlide(i);
+     });
+ });
+ 
+ // Start autoplay when the page loads
+ startAutoplay();
+           </script>
+          <!-- Career Guidance & Upcoming Events Section -->
+          <!-- <section class="relative flex justify-center items-center min-h-[60vh] w-full mt-8 mb-10">
+            <div class="absolute top-0 bg-[#843c92] w-full z-10 transition-all duration-300 h-[100vh]  md:h-[32vh] sm:h-[78vh]"></div>
+            <div class="flex justify-around items-center w-[85%] z-20 flex-wrap gap-6 relative">
+                <div class="flex flex-col items-center justify-center bg-[#d191af] text-center w-[30rem] h-[20rem] md:w-[25rem] md:h-[25rem] lg:w-[25rem] lg:h-[25rem] shadow-[10px_-10px_white] p-8 sm:mt-[60px]">
+                    <h1 class="text-white text-2xl md:text-3xl font-light">PERSONALIZED <br> CAREER GUIDANCE</h1>
+                    <p class="text-black text-sm md:text-base mt-6">At Avanzo Academy, we believe in not just educating minds but empowering individuals to build fulfilling and successful careers. Your aspirations are unique, and so is our approach to guiding you towards a future filled with opportunities.</p>
+                </div>
+                <div class="flex flex-col items-center justify-center bg-[#d191af] text-center w-[30rem] h-[20rem] md:w-[25rem] md:h-[25rem] lg:w-[25rem] lg:h-[25rem] shadow-[10px_-10px_white] p-8 sm:mt-[60px] relative">
+                  <h1 class="text-white text-2xl md:text-3xl font-light">UPCOMMING EVENTS</h1>
+                    <div class="absolute w-[2px] h-[12rem] lg:h-[200px] bg-[#843c92]  lg:top-[190px] left-[54px] transform -translate-x-1/2  z-21"></div>
+                    <div class="flex items-center justify-start gap-4 max-w-[700px] w-[20rem] lg:w-[30rem] mt-[10px] lg:top-[220px] left-11 absolute  z-10">
+                        <div class=" w-5 h-5 bg-[#843c92] rounded-full z-20 relative"></div>
+                        <p class="text-sm lg:text-lg md:text-base font-semibold">NEW COURSE PACKS ARRIVAL</p>
+                    </div>
+                    <div class="flex items-center justify-start gap-4 max-w-[700px] w-[20rem] lg:w-[30rem] mt-6  top-[100px] lg:top-[250px] left-11 absolute z-10">
+                        <div class="w-5 h-5 bg-[#843c92] rounded-full z-20 relative"></div>
+                        <p class="text-sm lg:text-lg  md:text-base font-semibold ">NEW BATCH ANNOUNCEMENT</p>
+                    </div>
+                    <div class="d h-[200px] w-[100px]">
+
+                    </div>
+              </div>
+              </div >
+        </section>
+
+            </div> -->
+
+
+
+
+
+            <!-- Career Guidance & Upcoming Events Section -->
+          <!-- <section class="relative flex justify-center items-center min-h-[60vh] w-full mt-8 mb-10">
+            <div class="absolute top-0 bg-[#843c92] w-full z-10 transition-all duration-300 h-[100vh]  md:h-[32vh] sm:h-[78vh]"></div>
+            <div class="flex justify-around items-center w-[85%] z-20 flex-wrap gap-6 relative">
+                <div class="flex flex-col items-center justify-center bg-[#d191af] text-center w-[30rem] h-[20rem] md:w-[25rem] md:h-[25rem] lg:w-[25rem] lg:h-[25rem] shadow-[10px_-10px_white] p-8 sm:mt-[60px]">
+                    <h1 class="text-white text-2xl md:text-3xl font-light">PERSONALIZED <br> CAREER GUIDANCE</h1>
+                    <p class="text-black text-sm md:text-base mt-6">At Avanzo Academy, we believe in not just educating minds but empowering individuals to build fulfilling and successful careers. Your aspirations are unique, and so is our approach to guiding you towards a future filled with opportunities.</p>
+                </div>
+                <div class="flex flex-col items-center justify-center bg-[#d191af] text-center w-[30rem] h-[20rem] md:w-[25rem] md:h-[25rem] lg:w-[25rem] lg:h-[25rem] shadow-[10px_-10px_white] p-8 sm:mt-[60px] relative">
+                  <h1 class="text-white text-2xl md:text-3xl font-light">UPCOMMING EVENTS</h1>
+                    <div class="absolute w-[2px] h-[12rem] lg:h-[200px] bg-[#843c92]  lg:top-[190px] left-[54px] transform -translate-x-1/2  z-21"></div>
+                    <div class="flex items-center justify-start gap-4 max-w-[700px] w-[20rem] lg:w-[30rem] mt-[10px] lg:top-[220px] left-11 absolute  z-10">
+                        <div class=" w-5 h-5 bg-[#843c92] rounded-full z-20 relative"></div>
+                        <p class="text-sm lg:text-lg md:text-base font-semibold">NEW COURSE PACKS ARRIVAL</p>
+                    </div>
+                    <div class="flex items-center justify-start gap-4 max-w-[700px] w-[20rem] lg:w-[30rem] mt-6  top-[100px] lg:top-[250px] left-11 absolute z-10">
+                        <div class="w-5 h-5 bg-[#843c92] rounded-full z-20 relative"></div>
+                        <p class="text-sm lg:text-lg  md:text-base font-semibold ">NEW BATCH ANNOUNCEMENT</p>
+                    </div>
+                    <div class="d h-[200px] w-[100px]">
+
+                    </div>
+              </div>
+              </div >
+        </section>
+
+            </div> -->
+
+
+
+
+
+           <!-- Career Guidance & Upcoming Events Section -->
+          <section class="relative flex justify-center items-center min-h-[60vh] w-full mt-8 mb-10">
+            <div class="absolute top-0 bg-[#843c92] w-full z-10 transition-all duration-300 h-[100vh]  md:h-[32vh] sm:h-[78vh]"></div>
+            <div class="flex justify-around items-center w-[85%] z-20 flex-wrap gap-6 relative">
+                <div class="flex flex-col items-center justify-center bg-[#d191af] text-center w-[30rem] h-[20rem] md:w-[25rem] md:h-[25rem] lg:w-[25rem] lg:h-[25rem] shadow-[10px_-10px_white] p-8 sm:mt-[60px]">
+                    <h1 class="text-white text-2xl md:text-3xl font-light">PERSONALIZED <br> CAREER GUIDANCE</h1>
+                    <p class="text-black text-sm md:text-base mt-6">At Avanzo Academy, we believe in not just educating minds but empowering individuals to build fulfilling and successful careers. Your aspirations are unique, and so is our approach to guiding you towards a future filled with opportunities.</p>
+                    <!-- Button Added Here -->
+    <a href="/book-session" 
+       class="mt-8 inline-block bg-white text-[#9f6496] font-semibold px-8 py-3 rounded-lg shadow-md hover:bg-gray-100 hover:text-[#8c5383] transition-colors duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-[#9f6496] focus:ring-opacity-50"
+       role="button">
+        Book a Session
+    </a>
+                  </div>
+                <div class="flex flex-col items-center justify-center bg-[#d191af] text-center w-[30rem] h-[20rem] md:w-[25rem] md:h-[25rem] lg:w-[25rem] lg:h-[25rem] shadow-[10px_-10px_white] p-8 sm:mt-[60px] relative">
+                  <h1 class="text-white text-2xl md:text-3xl font-light">UPCOMMING EVENTS</h1>
+                    <div class="absolute w-[2px] h-[12rem] lg:h-[200px] bg-[#843c92]  lg:top-[190px] left-[54px] transform -translate-x-1/2  z-21"></div>
+                    <div class="flex items-center justify-start gap-4 max-w-[700px] w-[20rem] lg:w-[30rem] mt-[10px] lg:top-[220px] left-11 absolute  z-10">
+                        <div class=" w-5 h-5 bg-[#843c92] rounded-full z-20 relative"></div>
+<p class="text-sm lg:text-lg md:text-base font-semibold">
+    <a href="Announcement.html" 
+       class="hover:underline hover:text-[#8a5883] transition-colors duration-150">
+        NEW COURSE PACKS ARRIVAL
+    </a>
+</p>                    </div>
+                    <div class="flex items-center justify-start gap-4 max-w-[700px] w-[20rem] lg:w-[30rem] mt-6  top-[100px] lg:top-[250px] left-11 absolute z-10">
+                        <div class="w-5 h-5 bg-[#843c92] rounded-full z-20 relative"></div>
+                        <p class="text-sm lg:text-lg  md:text-base font-semibold ">NEW BATCH ANNOUNCEMENT</p>
+                    </div>
+                    <div class="d h-[200px] w-[100px]">
+
+                    </div>
+              </div>
+              </div >
+        </section>
+
+            </div>
+             <!-- Animated Scrolling Disclaimer Section -->
+             <section class="w-full  py-4 flex justify-center items-center animate-pulse overflow-hidden">
+              <div class="whitespace-nowrap overflow-hidden">
+                <p class="text-black font-bold text-xl md:text-8xl lg:text-xl  p-6 rounded-lg  animate-marquee">
+                  Disclaimer: * We do not charge for hiring. *
+                </p>
+                  </div>
+            </section>
+<style>
+@keyframes marquee {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+.animate-marquee {
+  display: inline-block;
+  white-space: nowrap;
+  animation: marquee 10s linear infinite;
+}
+</style>
+
+
+<footer id="contact" class="bg-[#9f6496] text-white py-8 z-19">
+  <div class="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-4 px-4">
+    <!-- Quick Links -->
+    <div>
+      <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+      <ul class="space-y-2">
+        <li><a href="#" class="hover:underline">Home</a></li>
+        <li><a href="courses.html" class="hover:underline">Courses</a></li>
+        <li><a href="Announcement.html" class="hover:underline">Announcement</a></li>
+        <li><a href="https://lms.avanzoacademy.in" class="hover:underline">Virtual Centre</a></li>
+        <li><a href="industry.html" class="hover:underline">Industry</a></li>
+        <li><a href="#contact" class="hover:underline">Contact</a></li>
+      </ul>
+      <div class="flex items-center gap-4 mt-4">
+        <!-- Social Media Icons -->
+        <a href="https://facebook.com" target="_blank" class="text-white hover:text-black">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 5.1 3.84 9.3 8.77 9.95v-7.03H8.69v-2.92h2.08V9.6c0-2.07 1.23-3.22 3.11-3.22.9 0 1.85.16 1.85.16v2.04h-1.04c-1.03 0-1.34.64-1.34 1.29v1.54h2.28l-.36 2.92h-1.92v7.03C18.16 21.3 22 17.1 22 12z" />
+          </svg>
+        </a>
+        <a href="https://twitter.com" target="_blank" class="text-white hover:text-black">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M22.46 6c-.77.35-1.6.59-2.46.7a4.18 4.18 0 0 0 1.84-2.3 8.28 8.28 0 0 1-2.63 1 4.12 4.12 0 0 0-7.11 3.74 11.67 11.67 0 0 1-8.47-4.3 4.12 4.12 0 0 0 1.28 5.49 4.1 4.1 0 0 1-1.86-.51v.05a4.12 4.12 0 0 0 3.3 4 4.12 4.12 0 0 1-1.86.07 4.12 4.12 0 0 0 3.84 2.85 8.28 8.28 0 0 1-5.12 1.77c-.33 0-.65-.02-.97-.05a11.67 11.67 0 0 0 6.29 1.85c7.55 0 11.67-6.26 11.67-11.67v-.53c.8-.58 1.5-1.3 2.05-2.13z" />
+          </svg>
+        </a>
+        <a href="https://instagram.com" target="_blank" class="text-white hover:text-black">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M7.75 2h8.5C19.15 2 21 3.85 21 6.25v8.5c0 2.4-1.85 4.25-4.25 4.25h-8.5C3.85 19 2 17.15 2 14.75v-8.5C2 3.85 3.85 2 6.25 2zm5.25 4c-2.79 0-5 2.21-5 5s2.21 5 5 5 5-2.21 5-5-2.21-5-5-5zm-1.68 5c0-.93.75-1.68 1.68-1.68.93 0 1.68.75 1.68 1.68s-.75 1.68-1.68 1.68c-.93 0-1.68-.75-1.68-1.68zm6.18-4.53c.41 0 .75-.34.75-.75s-.34-.75-.75-.75-.75.34-.75.75.34.75.75.75z" />
+          </svg>
+        </a>
+        <a href="https://youtube.com" target="_blank" class="text-white hover:text-black">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M10 15l5.2-3-5.2-3z"></path>
+            <path d="M21.6 7.2s-.2-1.5-.8-2.2c-.7-.9-1.5-1-3.2-1.1C15.2 4 12 4 12 4s-3.2 0-5.6.2c-1.7.1-2.5.2-3.2 1.1-.6.7-.8 2.2-.8 2.2s-.2 1.8-.2 3.6v1.6c0 1.8.2 3.6.2 3.6s.2 1.5.8 2.2c.7.9 1.5 1 3.2 1.1 2.4.2 5.6.2 5.6.2s3.2 0 5.6-.2c1.7-.1 2.5-.2 3.2-1.1.6-.7.8-2.2.8-2.2s.2-1.8.2-3.6v-1.6c0-1.8-.2-3.6-.2-3.6z"></path>
+          </svg>
+        </a>
+        
+      </div>
+    </div> 
+
+    <div class="flex w-[200px]  flex-col align-center">
+      <img src="assets/girl.png" alt="">
+      <div class="px-3 py-2 bg-pink-400/50 rounded-2xl">
+      <p class="text-center text-white font-semibold">Name</p>
+      <p class="text-center text-white">Front Desk Staff</p>
+      </div>  
+    </div>
+
+    <!-- Contact -->
+    <div>
+      <h3 class="text-lg font-semibold mb-4">Contact</h3>
+      <p>AVANZO CYBER INSTITUTE<br>NRA – 89, Whitefield,<br>Puthurkkara, Ayyanthole, Thrissur 680003</p>
+      <p class="mt-4">
+        <a href="tel:+917356111128" class="block hover:underline">+91 73561 11128</a>
+        <a href="mailto:info@avanzosolutions.in" class="block hover:underline">info@avanzosolutions.in</a>
+      </p>
+    </div>
+
+    <!-- Find Us Here -->
+    <div class="text-center">
+  
+      <!-- Cyber Logo -->
+      <img src="assets/cyber.png" alt="Cyber Logo" class="w-24 h-20 mx-auto mb-4">
+  
+      <!-- <button class="px-6 md:px-8 py-3 md:py-4 bg-secondary text-white rounded-lg hover:bg-tertiary transition-colors">
+          Subscribe Now / 
+      </button> -->
+      <h3 class="text-lg font-semibold mb-4">Download CyberHulk</h3>
+
+  
+      <!-- Scanner Image -->
+      <img src="assets/scan.png" alt="Scanner" class="w-24 h-24 mx-auto mt-4">
+  </div>
+  
+       </footer>
+
+<div class="w-full h-10 flex justify-center items-center bg-[#d191af] text-center text-sm text-gray-200 mt-0 mb-0">
+  <p>
+    A unit of Avanzo Cyber Solutions | Designed by
+    <a href="https://avanzodesign.in" class="hover:underline text-white">avanzodesign.in</a>
+  </p>
+</div>
+
+
+      
+</body>
+</html>
