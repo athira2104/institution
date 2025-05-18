@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Upcoming events</title>
+    <title>Announcement</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 <script>
   tailwind.config = {
@@ -24,328 +24,639 @@
     },
   };
 </script>
+  
 
     <!-- <link rel="stylesheet" href="input.css"> -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-        <style>
-            body {
-                font-family: 'Raleway', sans-serif;
-                overflow-x: hidden;
-            }
-            .nav-menu {
-                transform: translateX(-100%);
-                transition: transform 0.3s ease-in-out;
-            }
-            .nav-menu.active {
-                transform: translateX(0);
-            }
-            .dot, .dot-expert, .dot-testimonial {
-          width: 10px;
-          height: 10px;
-          border-radius: 100%;
-          border: 1px solid rgb(66, 66, 66);
-          background-color: white; /* Gray-300 */
-          display: inline-block;
-          margin: 0 4px;
-          cursor: pointer;
-          transition: width 0.3s ease; /* Add transition for smooth effect */
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Raleway', sans-serif;
+            overflow-x: hidden;
         }
-    
-        .dot-testimonial{
-          border: 0.5px solid #9f6496;
-          background-color: #9f6496;
+        .nav-menu {
+            transform: translateX(-100%);
+            transition: transform 0.3s ease-in-out;
         }
-    
-        .dot.active, .dot-expert.active{
-          width: 80px; /* Make the active dot wider */
-          background-color: #000000;
-          border-radius: 20px; /* Darker color for active dot */
+        .nav-menu.active {
+            transform: translateX(0);
         }
-        </style>
+        .dot, .dot-expert, .dot-testimonial {
+      width: 10px;
+      height: 10px;
+      border-radius: 100%;
+      border: 1px solid rgb(66, 66, 66);
+      background-color: white; /* Gray-300 */
+      display: inline-block;
+      margin: 0 4px;
+      cursor: pointer;
+      transition: width 0.3s ease; /* Add transition for smooth effect */
+    }
+
+    .dot-testimonial{
+      border: 0.5px solid #9f6496;
+      background-color: #9f6496;
+    }
+
+    .dot.active, .dot-expert.active{
+      width: 80px; /* Make the active dot wider */
+      background-color: #000000;
+      border-radius: 20px; /* Darker color for active dot */
+    }
+    </style>
 </head>
-    
+
 <body>
-          
-    <header class="bg-white py-4 px-6"> <!-- Container for the entire header - white background, padding -->
-      <div class="container mx-auto flex justify-between items-center"> <!-- Container to center content, flexbox for layout, center alignment -->
+      
+<header class="bg-white py-4 px-6"> <!-- Container for the entire header - white background, padding -->
+  <div class="container mx-auto flex justify-between items-center"> <!-- Container to center content, flexbox for layout, center alignment -->
+
+    <!-- Logo Area -->
+    <div class="flex items-center"> <!-- Flex to align logo and text horizontally -->
+      <img src="./assets/newlogo.png" alt="Avanzo Academy Logo" class="h-30 w-50"> <!-- Logo image - adjust h-10 and w-12 as needed --> 
+      <!-- Navigation -->
+      <nav>
+        <button class="flex items-center max-md:hidden text-gray-700 hover:text-gray-900 focus:outline-none"> <!-- Button for "Programs" - gray text, darker on hover, remove focus outline -->
+          <span>Programs</span>
+          <svg class="ml-1 h-4 w-4 fill-current" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- (Dropdown Arrow SVG - You'd need to include the actual SVG path here) -->
+            <path d="M7 7l3-3 3 3m-6 6l3 3 3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+      </nav>
+    </div>
+<nav class="hidden lg:mx-30px md:flex flex-1 justify-center mr-[115px] z-20">
+                <div class="flex items-center gap-8">
+                    <a href="index.html" class="text-gray-800 hover:text-[#9f6496] transition-colors">Home</a>
+                    <a href="/courses.html" class="text-gray-800 hover:text-[#9f6496] transition-colors">Courses</a>
+                    <!-- <a href="/Announcement.html" class="text-gray-800 hover:text-[#9f6496] transition-colors">Announcement</a> -->
+                    <!-- <a href="https://lms.avanzoacademy.in" class="text-black hover:text-white transition-colors">Virtual Centre</a> -->
+                    <a href="/industry.html" class="text-black hover:text-[#9f6496] transition-colors">Industry </a>
+                    <a href="#contact" class="text-black hover:text-[#9f6496] transition-colors">Contact</a>
+                </div>
+            </nav>
+  
     
-        <!-- Logo Area -->
-        <div class="flex items-center"> <!-- Flex to align logo and text horizontally -->
-          <img src="./assets/newlogo.png" alt="Avanzo Academy Logo" class="h-25 w-50"> <!-- Logo image - adjust h-10 and w-12 as needed --> 
-          <!-- Navigation -->
-          <nav>
-            <button class="flex items-center max-md:hidden text-gray-700 hover:text-gray-900 focus:outline-none"> <!-- Button for "Programs" - gray text, darker on hover, remove focus outline -->
-              <span>Programs</span>
-              <svg class="ml-1 h-4 w-4 fill-current" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <!-- (Dropdown Arrow SVG - You'd need to include the actual SVG path here) -->
-                <path d="M7 7l3-3 3 3m-6 6l3 3 3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </button>
-          </nav>
+
+    <!-- Button -->
+    <div>
+      <button class="bg-[#d191af] text-gray-700 font-medium rounded-full max-sm:px-1 max-sm:py-0 max-sm:m-2 max-sm:text-sm px-4 py-2 hover:bg-pink-300 focus:outline-none focus:ring-2 focus:ring-pink-300 focus:ring-opacity-50"> <!-- Pink background, gray text, medium font, rounded button, padding, hover effect, focus styles -->
+        Get Free Demo
+      </button>
+    </div>
+
+  </div>
+</header>
+      
+
+<section class="py-8 px-6 max-w-6xl mx-auto">
+  <div class="container mx-auto">
+    <!-- Navigation Links -->
+    <div class="container mx-auto mb-6">
+        <nav class="text-sm text-gray-500">
+            <a href="#" class="hover:text-gray-700">Announcement</a>
+            <span class="mx-2">></span>
+            <a href="#" class="font-medium hover:text-gray-700">New Courses</a>
+            <span class="mx-2">></span>
+            <a href="#" class="hover:text-gray-700">Upcoming Events</a>
+        </nav>
+    </div>
+
+    <h2 class="text-3xl font-bold text-center mb-2">New Courses</h2>
+    <p class="text-gray-600 text-center mb-6">Lorem ipsum dolor sit amet. Ea temporibus placeat ab officiis dolorem ut libero consequuntur sed fuga</p>
+
+    <!-- Background Section -->
+    <div class="relative bg-[#9f6496] h-[350px] max-md:h-auto rounded-lg p-6">
+        <div class="z-30 absolute max-md:relative left-1/2 transform -translate-x-1/2 w-[110%] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4" id="courses-container">
+            <!-- Card 1 -->
+            <div class="flex flex-col relative bg-white h-[265px] shadow-lg hover:shadow-xl">
+                <img src="assets/pic 4.png" alt="Cyber Forensic" class="w-full h-40 object-cover">
+                <div class="p-4 text-center h-20 flex flex-col justify-center">
+                    <h3 class="text-lg font-semibold text-gray-800">SELF PLACED COURSES</h3>
+                </div>
+                <img src="./assets/Icon 2.png" class="absolute top-1/2 right-4 bg-[#9f6496] text-white rounded-full w-8 h-8 flex items-center justify-center -translate-y-[-10px]">
+            </div>
+
+            <!-- Card 2 -->
+            <div class="relative h-[265px] bg-white shadow-lg overflow-hidden hover:shadow-xl">
+                <img src="assets/pic 3.png" alt="Digital Evidence" class="w-full h-40 object-cover">
+                <div class="p-4 text-center h-20 flex flex-col justify-center">
+                    <h3 class="text-lg font-semibold text-gray-800">SHORT TERM COURSES</h3>
+                </div>
+                <img src="./assets/Icon 2.png" class="absolute top-1/2 right-4 bg-[#9f6496] text-white rounded-full w-8 h-8 flex items-center justify-center -translate-y-[-10px]">
+            </div>
+
+            <!-- Card 3 -->
+            <div class="relative h-[265px] bg-white shadow-lg overflow-hidden hover:shadow-xl">
+                <img src="assets/pic 4.png" alt="Cyber Crime" class="w-full h-40 object-cover">
+                <div class="p-4 text-center h-20 flex flex-col justify-center">
+                    <h3 class="text-lg font-semibold text-gray-800">CERTIFICATION COURSES</h3>
+                </div>
+                <img src="./assets/Icon 2.png" class="absolute top-1/2 right-4 bg-[#9f6496] text-white rounded-full w-8 h-8 flex items-center justify-center -translate-y-[-10px]">
+            </div>
+
+            <!-- Card 4 -->
+            <div class="relative h-[265px] bg-white shadow-lg overflow-hidden hover:shadow-xl z-30">
+                <img src="assets/pic 5.png" alt="Ethical Hacking" class="w-full h-40 object-cover">
+                <div class="p-4 text-center h-20 flex flex-col justify-center">
+                    <h3 class="text-lg font-semibold text-gray-800">DIPLOMA COURSES</h3>
+                </div>
+                <img src="./assets/Icon 2.png" class="absolute top-1/2 right-4 bg-[#9f6496] text-white rounded-full w-8 h-8 flex items-center justify-center -translate-y-[-10px]">
+            </div>
         </div>
+    </div>
+
+    <!-- Dot Pagination (Only Dots) -->
+    <div id="pagination" class="flex justify-center mt-6 space-x-2">
+        <!-- Dots will be dynamically added by JavaScript -->
+    </div>
+
+  </div>
+</section>
+
+<script>
+ const coursesPerPage = 4;  // Number of courses per page
+const totalCourses = 8;    // Total number of courses
+let currentPage = 1;      // Start on page 1
+let autoScroll;           // Variable to store auto-scroll interval
+
+// Generate Dots for Pagination
+function generatePagination() {
+    const totalPages = Math.ceil(totalCourses / coursesPerPage);
+    const paginationContainer = document.getElementById("pagination");
+
+    paginationContainer.innerHTML = ""; // Clear existing pagination dots
+
+    for (let i = 1; i <= totalPages; i++) {
+        const dotButton = document.createElement("button");
+        dotButton.textContent = "•";  // The dot character
+        dotButton.classList.add("text-2xl", "text-gray-400", "cursor-pointer", "transition-all", "duration-200", "hover:text-gray-600");
+        dotButton.onclick = () => {
+            clearInterval(autoScroll); // Stop auto-scroll when manually clicked
+            goToPage(i);
+            startAutoScroll(); // Restart auto-scroll
+        };
+        paginationContainer.appendChild(dotButton);
+    }
+
+    updateActiveDot();
+}
+
+// Go to the selected page
+function goToPage(page) {
+    currentPage = page;
+    displayCourses();
+}
+
+// Display the courses corresponding to the current page
+function displayCourses() {
+    const coursesContainer = document.getElementById("courses-container");
+    coursesContainer.innerHTML = "";  // Clear current content
+
+    // Calculate start and end indices based on the current page
+    const startIndex = (currentPage - 1) * coursesPerPage;
+    const endIndex = startIndex + coursesPerPage;
+
+    for (let i = startIndex; i < endIndex && i < totalCourses; i++) {
+        const courseCard = document.createElement("div");
+        courseCard.classList.add("flex", "flex-col", "relative", "bg-white", "h-[265px]", "shadow-lg", "hover:shadow-xl");
+        courseCard.innerHTML = `
+            <img src="assets/pic ${i+1}.png"  class="w-full h-40 object-cover">
+            <div class="p-4 text-center h-20 flex flex-col justify-center">
+                <h3 class="text-lg font-semibold text-gray-800">lorem ipsum</h3>
+            </div>
+            <img src="./assets/Icon 2.png" class="absolute top-1/2 right-4 bg-[#9f6496] text-white rounded-full w-8 h-8 flex items-center justify-center -translate-y-[-10px]">
+        `;
+        coursesContainer.appendChild(courseCard);
+    }
+
+    // Update dots when the page changes
+    generatePagination();
+}
+
+// Update active dot color to indicate the current page
+function updateActiveDot() {
+    const dots = document.querySelectorAll("#pagination button");
+    dots.forEach((dot, index) => {
+        if (index === currentPage - 1) {
+            dot.classList.add("text-gray-600"); // Active dot
+            dot.classList.remove("text-gray-400");
+        } else {
+            dot.classList.remove("text-gray-600");
+            dot.classList.add("text-gray-400");
+        }
+    });
+}
+
+// Auto-scroll function
+function startAutoScroll() {
+    autoScroll = setInterval(() => {
+        currentPage = currentPage < Math.ceil(totalCourses / coursesPerPage) ? currentPage + 1 : 1; // Loop back
+        displayCourses();
+    }, 4000); // Change page every 4 seconds
+}
+
+// Initialize the first page
+displayCourses();
+startAutoScroll(); // Start auto-scroll on load
+
+</script>
+
+
+    <!-- Button Below -->
+    <div class="flex justify-center mt-6">
+        <button class="bg-[#6469a5] hover:bg-indigo-700 text-white rounded-full px-6 py-3 text-sm">
+            Book your Career Counselling
+        </button>
+    </div>
+<!-- Upcoming Events Section -->
+<section class="py-8 px-6 max-w-6xl mx-auto">
+  <h2 class="text-3xl font-bold text-center mb-2">Upcoming Events</h2>
+  <p class="text-gray-600 text-center mb-6">Lorem ipsum dolor sit amet. Ea temporibus placeat ab officiis dolorem ut libero consequuntur sed fuga</p>
+  
+  <!-- Slider Container -->
+  <div class="relative ">
+    <!-- Slider Track -->
+    <div id="sliderTrack" class="flex transition-transform duration-300 ease-in-out">
+      <!-- Event 1 -->
+      <div class="min-w-full md:min-w-[50%] lg:min-w-[33.33%] p-2">
+        <div class="relative">
+          <div class="bg-black h-40 rounded-t-lg relative">
+            <div class="absolute top-0 right-0 bg-[#833d91] text-white p-2 rounded-bl-lg">
+              <div class="text-sm">FEB</div>
+              <div class="text-xl font-bold">02</div>
+            </div>
+            <div class="bg-[#833d91] w-full  text-white py-2 px-4 transform absolute top-[65%] -translate-x-4 rounded-lg">
+              <a href="webinarpage.html" target="_blank">WEBINAR</a> 
+            </div>     
+          </div>     
+          <div class="bg-white p-4 rounded-b-lg shadow-md">
+            <p class="text-sm mb-4">Lorem ipsum dolor sit amet, a temporibus placeat ab officiis</p>
+            <button class="bg-[#d190af] hover:bg-pink-600 text-white px-4 py-1 text-xs">Register Now</button>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Event 2 -->
+      <div class="min-w-full md:min-w-[50%] lg:min-w-[33.33%] p-2">
+        <div class="relative">
+          <div class="bg-black h-40 rounded-t-lg relative">
+            <div class="absolute top-0 right-0 bg-[#833d91] text-white p-2 rounded-bl-lg">
+              <div class="text-sm">FEB</div>
+              <div class="text-xl font-bold">02</div>
+            </div>
+            <div class="bg-[#833d91] w-full  text-white py-2 px-4 transform absolute top-[65%] -translate-x-2 rounded-lg">
+              <a href="webinarpage.html" target="_blank">WEBINAR</a> 
+            </div>     
+          </div>     
+          <div class="bg-white p-4 rounded-b-lg shadow-md">
+            <p class="text-sm mb-4">Lorem ipsum dolor sit amet, a temporibus placeat ab officiis</p>
+            <button class="bg-[#d190af] hover:bg-pink-600 text-white px-4 py-1 text-xs">Register Now</button>
+          </div>
+        </div>
+      </div>
+            
+      <!-- Event 3 -->
+      <div class="min-w-full md:min-w-[50%] lg:min-w-[33.33%] p-2">
+        <div class="relative">
+          <div class="bg-black h-40 rounded-t-lg relative">
+            <div class="absolute top-0 right-0 bg-[#833d91] text-white p-2 rounded-bl-lg">
+              <div class="text-sm">FEB</div>
+              <div class="text-xl font-bold">02</div>
+            </div>
+            <div class="bg-[#833d91] w-full  text-white py-2 px-4 transform absolute top-[65%] -translate-x-2 rounded-lg">
+              <a href="webinarpage.html" target="_blank">WEBINAR</a> 
+            </div>     
+          </div>     
+          <div class="bg-white p-4 rounded-b-lg shadow-md">
+            <p class="text-sm mb-4">Lorem ipsum dolor sit amet, a temporibus placeat ab officiis</p>
+            <button class="bg-[#d190af] hover:bg-pink-600 text-white px-4 py-1 text-xs">Register Now</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Pagination -->
+  <div class="flex justify-center space-x-2 mt-6">
+    <button id="prevBtn" class="w-6 h-2 bg-purple-600 rounded-full"></button>
+    <button id="nextBtn" class="w-6 h-2 bg-purple-300 rounded-full"></button>
+  </div>
+</section>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+  const sliderTrack = document.getElementById('sliderTrack');
+  const prevBtn = document.getElementById('prevBtn');
+  const nextBtn = document.getElementById('nextBtn');
+  let currentPosition = 0;
+  let currentSlide = 0;
+  let autoScrollInterval;
+  const totalSlides = document.querySelectorAll('#sliderTrack > div').length;
+  
+  // Update pagination indicators
+  const updatePagination = () => {
+    // Reset all buttons to inactive state
+    document.querySelectorAll('[id^="pageBtn"]').forEach(btn => {
+      btn.classList.remove('bg-purple-600');
+      btn.classList.add('bg-purple-300');
+    });
     
-        
+    // Set active button
+    const activeBtn = document.getElementById(`pageBtn${currentSlide}`);
+    if (activeBtn) {
+      activeBtn.classList.remove('bg-purple-300');
+      activeBtn.classList.add('bg-purple-600');
+    }
+  };
+  
+  // Function to move to a specific slide
+  const moveToSlide = (slideIndex) => {
+    // Get the current viewport width
+    const viewportWidth = window.innerWidth;
+    let slideWidth;
     
-        <!-- Button -->
+    // Determine slide width based on responsive breakpoints
+    if (viewportWidth >= 1024) { // lg breakpoint
+      slideWidth = 100 / 3; // 33.33%
+    } else if (viewportWidth >= 768) { // md breakpoint
+      slideWidth = 50; // 50%
+    } else {
+      slideWidth = 100; // 100%
+    }
+    
+    currentSlide = slideIndex;
+    
+    // Calculate the translation distance
+    const translateX = -(slideWidth * currentSlide);
+    sliderTrack.style.transform = `translateX(${translateX}%)`;
+    
+    updatePagination();
+  };
+  
+  // Function to move to the next slide
+  const moveNext = () => {
+    currentSlide = (currentSlide + 1) % totalSlides;
+    moveToSlide(currentSlide);
+  };
+  
+  // Function to move to the previous slide
+  const movePrev = () => {
+    currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+    moveToSlide(currentSlide);
+  };
+  
+  // Auto-scroll functionality
+  const startAutoScroll = () => {
+    stopAutoScroll(); // Clear any existing interval first
+    autoScrollInterval = setInterval(moveNext, 3000); // Move to the next slide every 3 seconds
+  };
+  
+  // Stop auto-scroll
+  const stopAutoScroll = () => {
+    clearInterval(autoScrollInterval);
+  };
+  
+  // Create pagination indicators dynamically
+  const createPaginationButtons = () => {
+    const paginationContainer = document.querySelector('.flex.justify-center.space-x-2');
+    
+    // Clear existing buttons
+    paginationContainer.innerHTML = '';
+    
+    // Create a button for each slide
+    for (let i = 0; i < totalSlides; i++) {
+      const button = document.createElement('button');
+      button.id = `pageBtn${i}`;
+      button.className = `w-6 h-2 ${i === 0 ? 'bg-purple-600' : 'bg-purple-300'} rounded-full`;
+      
+      button.addEventListener('click', () => {
+        moveToSlide(i);
+        stopAutoScroll();
+        startAutoScroll(); // Restart auto-scroll after manual navigation
+      });
+      
+      paginationContainer.appendChild(button);
+    }
+  };
+  
+  // Initialize pagination
+  createPaginationButtons();
+  
+  // Event listeners for prev/next buttons
+  document.addEventListener('click', (e) => {
+    if (e.target.id === 'prevBtn' || e.target.closest('#prevBtn')) {
+      movePrev();
+      stopAutoScroll();
+      startAutoScroll(); // Restart auto-scroll after manual navigation
+    } else if (e.target.id === 'nextBtn' || e.target.closest('#nextBtn')) {
+      moveNext();
+      stopAutoScroll();
+      startAutoScroll(); // Restart auto-scroll after manual navigation
+    }
+  });
+  
+  // Pause auto-scroll when user hovers over the slider
+  sliderTrack.addEventListener('mouseenter', stopAutoScroll);
+  sliderTrack.addEventListener('mouseleave', startAutoScroll);
+  
+  // Handle window resize events to ensure the slider works correctly at different screen sizes
+  window.addEventListener('resize', () => {
+    moveToSlide(currentSlide); // Recalculate position based on current viewport
+  });
+  
+  // Start auto-scroll when the page loads
+  startAutoScroll();
+});
+</script>
+<div>
+  
+  <section class="bg-[#382364] py-16 text-white">
+    <div class="container mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+      <!-- Left Side: Text and Input -->
+      <div>
+        <h2 class="text-3xl font-bold mb-6">GET THE LATEST INFO</h2>
+        <ul class="mb-8 space-y-4">
+          <li class="flex items-center">
+            <span class="block w-2.5 h-2.5 bg-white rounded-full mr-3"></span>
+            <span>Weekly industry news and updates</span>
+          </li>
+          <li class="flex items-center">
+            <span class="block w-2.5 h-2.5 bg-white rounded-full mr-3"></span>
+            <span>Stay informed with exclusive content</span>
+          </li>
+        </ul>
+        <div class="mb-4">
+          <label for="email" class="block text-sm font-medium mb-2">Email Address</label>
+          <input type="email" id="email" placeholder="Your email address"
+          class="bg-[#382364] border border-white text-white text-sm rounded-md focus:ring-purple-500 focus:border-purple-500 block w-full p-3 placeholder-purple-400">
+        </div>
         <div>
-          <button class="bg-[#d190af] text-gray-700 font-medium rounded-full max-sm:px-1 max-sm:py-0 max-sm:m-2 max-sm:text-sm px-4 py-2 hover:bg-pink-300 focus:outline-none focus:ring-2 focus:ring-pink-300 focus:ring-opacity-50"> <!-- Pink background, gray text, medium font, rounded button, padding, hover effect, focus styles -->
-            Get Free Demo
+          <button class="bg-[#d291b1] hover:bg-pink-600 text-white font-semibold rounded-md py-3 px-8 focus:outline-none focus:ring-2 block w-full focus:ring-pink-400 focus:ring-opacity-70">
+            Subscribe News Letter
           </button>
         </div>
-
-    
       </div>
-    </header>
-    <section class="py-8 px-6 max-w-6xl mx-auto">
-        <div class="container mx-auto">
-          <!-- Navigation Links -->
-          <div class="container mx-auto mb-6">
-              <nav class="text-sm text-gray-500">
-                  <a href="#" class="hover:text-gray-700 text-black font-semibold">industrial</a>
-                  <span class="mx-2">></span>
-                  <a href="#" class="font-medium hover:text-gray-700 text-black">News</a>
-                  &MediumSpace;
-                  <a href="#" class="hover:text-gray-700 text-black">interviews</a>
-                  &MediumSpace;
-                  <a href="#" class="hover:text-gray-700 text-black">Newsletter</a>
-              </nav>
-          </div>
-    </section>
-    <!-- ...............................upcoming events.................................... -->
-
-    <section>
-        <div class="flex flex-col justify-center items-center " >
-            <h1 class="text-center text-3xl text-black font-bold" >Upcoming Events</h1>
-            <p class="max-w-[900px] text-center my-5">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquam deleniti hic eius repudiandae soluta aperiam quasi, rerum expedita illum, laborum temporibus. Voluptatem tempora culpa dolorum sint facere, eum iure adipisci?</p>
-        </div>
-        <div class="flex max-md:flex-col justify-between max-md:px-4 px-72 py-8">
-            <div >
-                <div class="w-[450px] max-md:w-[290px] h-[250px] rounded-lg bg-black">
-    
-                </div>
-                <div>
-                    <h1 class="text-purple-900 py-3 text-2xl font-semibold">ET NIHIL VOLUPTATES</h1>
-                    <p class="max-w-[300px] max-md:max-w-[150px] text-sm">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusamus veniam</p>
-                    <button class="px-2 py-1 mt-4 bg-[#d190af] text-black font-bold rounded-lg text-sm" >Register Now</button>
-                </div>
-            </div>
-            <div>
-                <p class="max-w-[400px] ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem rerum perferendis nemo unde fugiat consectetur molestias, voluptate nostrum eius. Nam accusantium porro animi atque minima tempora laudantium earum corrupti sint?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut iure exercitationem labore accusamus repellendus doloremque corrupti delectus ut fuga, eaque voluptatem rerum neque, vitae nostrum sequi illo temporibus nihil totam.</p>
-            </div>
-        </div>
-    </section>
-    <section>
-        <div class="flex justify-between max-md:px-4 max-md:flex-col px-72 py-8">
-            <div >
-                <div class="w-[450px] max-md:w-[290px] h-[250px] rounded-lg bg-black">
-    
-                </div>
-                <div>
-                    <h1 class="text-purple-900 py-3 text-2xl font-semibold">ET NIHIL VOLUPTATES</h1>
-                    <p class="max-w-[300px] max-md:max-w-[150px]  text-sm">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusamus veniam</p>
-                    <button class="px-2 py-1 mt-4 bg-[#d190af] text-black font-bold rounded-lg text-sm" >Register Now</button>
-                </div>
-            </div>
-            <div>
-                <p class="max-w-[400px]">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem rerum perferendis nemo unde fugiat consectetur molestias, voluptate nostrum eius. Nam accusantium porro animi atque minima tempora laudantium earum corrupti sint?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut iure exercitationem labore accusamus repellendus doloremque corrupti delectus ut fuga, eaque voluptatem rerum neque, vitae nostrum sequi illo temporibus nihil totam.</p>
-            </div>
-        </div>
-    </section>
-    <!-- ...................................footer and slider.................................................... -->
-    <div>
   
-        <section class="bg-[#382364] py-16 text-white">
-          <div class="container mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-            <!-- Left Side: Text and Input -->
-            <div>
-              <h2 class="text-3xl font-bold mb-6">GET THE LATEST INFO</h2>
-              <ul class="mb-8 space-y-4">
-                <li class="flex items-center">
-                  <span class="block w-2.5 h-2.5 bg-white rounded-full mr-3"></span>
-                  <span>Weekly industry news and updates</span>
-                </li>
-                <li class="flex items-center">
-                  <span class="block w-2.5 h-2.5 bg-white rounded-full mr-3"></span>
-                  <span>Stay informed with exclusive content</span>
-                </li>
-              </ul>
-              <div class="mb-4">
-                <label for="email" class="block text-sm font-medium mb-2">Email Address</label>
-                <input type="email" id="email" placeholder="Your email address"
-                       class="bg-[#382364] border border-white text-white text-sm rounded-md focus:ring-purple-500 focus:border-purple-500 block w-full p-3 placeholder-purple-400">
-              </div>
-              <div>
-                <button class="bg-[#d291b1] hover:bg-pink-600 text-white font-semibold rounded-md py-3 px-8 focus:outline-none focus:ring-2 block w-full focus:ring-pink-400 focus:ring-opacity-70">
-                  Subscribe News Letter
-                </button>
-              </div>
-            </div>
-        
-            <!-- Right Side: Newsletter Thumbnails -->
-            <div class="relative overflow-hidden">
-              <!-- Thumbnails Container -->
-              <div id="thumbnails-container" class="flex transition-transform duration-500 ease-in-out">
-                <!-- Newsletter Thumbnail 1 -->
-                <div class=" rounded-md overflow-hidden shadow-md flex-shrink-0 w-1/3 p-2">
-                  <img src="assets/new1.png" alt="Newsletter Thumbnail 1" class="w-[90%] block">
-                </div>
-                <!-- Newsletter Thumbnail 2 (Larger) -->
-                <div class=" rounded-md overflow-hidden shadow-md transform scale-110 relative z-10 flex-shrink-0 w-1/3 p-2">
-                  <img src="assets/new2.png" alt="Newsletter Thumbnail 2" class="w-[90%] block">
-                </div>
-                <!-- Newsletter Thumbnail 3 -->
-                <div class="rounded-md overflow-hidden shadow-md flex-shrink-0 w-1/3 p-2">
-                  <img src="assets/news3.png" alt="Newsletter Thumbnail 3" class="w-[90%] block">
-                </div>
-                <!-- Repeat the same thumbnails for the slider effect -->
-                <div class=" rounded-md overflow-hidden shadow-md flex-shrink-0 w-1/3 p-2">
-                  <img src="assets/news3.png" alt="Newsletter Thumbnail 3" class="w-[90%] block">
-                </div>
-                <div class="rounded-md overflow-hidden shadow-md transform scale-110 relative z-10 flex-shrink-0 w-1/3 p-2">
-                  <img src="assets/new2.png" alt="Newsletter Thumbnail 2" class="w-[90%] block">
-                </div>
-                <div class=" rounded-md overflow-hidden shadow-md flex-shrink-0 w-1/3 p-2">
-                  <img src="assets/new1.png" alt="Newsletter Thumbnail 4" class="w-[90%] block">
-                </div>
-              </div>
-        
-              <!-- Pagination -->
-              <div class="flex justify-center items-center space-x-4 mt-8">
-                <button id="prev-button" class="bg-pink-500 rounded-full w-2 h-2 hover:bg-pink-600 focus:outline-none"></button>
-                <button id="next-button" class="bg-gray-500 rounded-full w-2 h-2 hover:bg-gray-600 focus:outline-none"></button>
-              </div>
-            </div>
+      <!-- Right Side: Newsletter Thumbnails -->
+      <div class="relative overflow-hidden">
+        <!-- Thumbnails Container -->
+        <div id="thumbnails-container" class="flex transition-transform duration-500 ease-in-out">
+          <!-- Newsletter Thumbnail 1 -->
+          <div class=" rounded-md overflow-hidden shadow-md flex-shrink-0 w-1/3 p-2">
+            <img src="assets/new1.png" alt="Newsletter Thumbnail 1" class="w-[90%] block">
           </div>
-        </section>
-      <script>document.addEventListener('DOMContentLoaded', function () {
-        const thumbnailsContainer = document.getElementById('thumbnails-container');
-        const prevButton = document.getElementById('prev-button');
-        const nextButton = document.getElementById('next-button');
-        
-        let scrollPosition = 0;
-        const thumbnailWidth = thumbnailsContainer.clientWidth / 3; // Width of one thumbnail
-      
-        // Get the total scrollable width of the container
-        const totalWidth = thumbnailsContainer.scrollWidth;
-      
-        // Auto-scroll functionality
-        const autoScroll = setInterval(() => {
-          scrollPosition += thumbnailWidth * 3; // Scroll by 3 thumbnails (one row)
-          if (scrollPosition >= totalWidth) {
-            scrollPosition = 0; // Reset to the first row
-          }
-          thumbnailsContainer.style.transform = `translateX(-${scrollPosition}px)`;
-        }, 3000); // Adjust the interval (in milliseconds) as needed
-      
-        // Next button click
-        nextButton.addEventListener('click', () => {
-          scrollPosition += thumbnailWidth * 2; // Scroll by 3 thumbnails (one row)
-          if (scrollPosition >= totalWidth) {
-            scrollPosition = 0; // Reset to the first row
-          }
-          thumbnailsContainer.style.transform = `translateX(-${scrollPosition}px)`;
-        });
-      
-        // Previous button click
-        prevButton.addEventListener('click', () => {
-          scrollPosition -= thumbnailWidth * 3; // Scroll back by 3 thumbnails (one row)
-          if (scrollPosition < 0) {
-            scrollPosition = totalWidth - thumbnailWidth * 3; // Go to the last row
-          }
-          thumbnailsContainer.style.transform = `translateX(-${scrollPosition}px)`;
-        });
-      });
-      </script>  
-        </script>
-                
-      
-                  <footer class="bg-[#9f6496] text-white py-8 z-19">
-                    <div class="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-4 px-4">
-                      <!-- Quick Links -->
-                      <div>
-                        <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
-                        <ul class="space-y-2">
-                          <li><a href="index.html" class="hover:underline">Home</a></li>
-                          <li><a href="courses.html" class="hover:underline">Courses</a></li>
-                          <li><a href="Announcement.html" class="hover:underline">Announcement</a></li>
-                          <li><a href="https://lms.avanzoacademy.in" class="hover:underline">Virtual Centre</a></li>
-                          <li><a href="industry.html" class="hover:underline">Industry</a></li>
-                          <li><a href="#contact" class="hover:underline">Contact</a></li>
-                        </ul>
-                        <div class="flex items-center gap-4 mt-4">
-                          <!-- Social Media Icons -->
-                          <a href="https://facebook.com" target="_blank" class="text-white hover:text-black">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
-                              <path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 5.1 3.84 9.3 8.77 9.95v-7.03H8.69v-2.92h2.08V9.6c0-2.07 1.23-3.22 3.11-3.22.9 0 1.85.16 1.85.16v2.04h-1.04c-1.03 0-1.34.64-1.34 1.29v1.54h2.28l-.36 2.92h-1.92v7.03C18.16 21.3 22 17.1 22 12z" />
-                            </svg>
-                          </a>
-                          <a href="https://twitter.com" target="_blank" class="text-white hover:text-black">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
-                              <path d="M22.46 6c-.77.35-1.6.59-2.46.7a4.18 4.18 0 0 0 1.84-2.3 8.28 8.28 0 0 1-2.63 1 4.12 4.12 0 0 0-7.11 3.74 11.67 11.67 0 0 1-8.47-4.3 4.12 4.12 0 0 0 1.28 5.49 4.1 4.1 0 0 1-1.86-.51v.05a4.12 4.12 0 0 0 3.3 4 4.12 4.12 0 0 1-1.86.07 4.12 4.12 0 0 0 3.84 2.85 8.28 8.28 0 0 1-5.12 1.77c-.33 0-.65-.02-.97-.05a11.67 11.67 0 0 0 6.29 1.85c7.55 0 11.67-6.26 11.67-11.67v-.53c.8-.58 1.5-1.3 2.05-2.13z" />
-                            </svg>
-                          </a>
-                          <a href="https://instagram.com" target="_blank" class="text-white hover:text-black">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
-                              <path d="M7.75 2h8.5C19.15 2 21 3.85 21 6.25v8.5c0 2.4-1.85 4.25-4.25 4.25h-8.5C3.85 19 2 17.15 2 14.75v-8.5C2 3.85 3.85 2 6.25 2zm5.25 4c-2.79 0-5 2.21-5 5s2.21 5 5 5 5-2.21 5-5-2.21-5-5-5zm-1.68 5c0-.93.75-1.68 1.68-1.68.93 0 1.68.75 1.68 1.68s-.75 1.68-1.68 1.68c-.93 0-1.68-.75-1.68-1.68zm6.18-4.53c.41 0 .75-.34.75-.75s-.34-.75-.75-.75-.75.34-.75.75.34.75.75.75z" />
-                            </svg>
-                          </a>
-                          <a href="https://youtube.com" target="_blank" class="text-white hover:text-black">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
-                              <path d="M10 15l5.2-3-5.2-3z"></path>
-                              <path d="M21.6 7.2s-.2-1.5-.8-2.2c-.7-.9-1.5-1-3.2-1.1C15.2 4 12 4 12 4s-3.2 0-5.6.2c-1.7.1-2.5.2-3.2 1.1-.6.7-.8 2.2-.8 2.2s-.2 1.8-.2 3.6v1.6c0 1.8.2 3.6.2 3.6s.2 1.5.8 2.2c.7.9 1.5 1 3.2 1.1 2.4.2 5.6.2 5.6.2s3.2 0 5.6-.2c1.7-.1 2.5-.2 3.2-1.1.6-.7.8-2.2.8-2.2s.2-1.8.2-3.6v-1.6c0-1.8-.2-3.6-.2-3.6z"></path>
-                            </svg>
-                          </a>
-                          
-                        </div>
-                      </div> 
-      
-                      <div class="flex w-[200px]  flex-col align-center">
-                        <img src="assets/girl.png" alt="">
-                        <div class="px-3 py-2 bg-pink-400/50 rounded-2xl">
-                        <p class="text-center text-white font-semibold">Name</p>
-                        <p class="text-center text-white">Front Desk Staff</p>
-                        </div>  
-                      </div>
-                  
-                      <!-- Contact -->
-                      <div>
-                        <h3 class="text-lg font-semibold mb-4">Contact</h3>
-                        <p>AVANZO CYBER INSTITUTE<br>NRA – 89, Whitefield,<br>Puthurkkara, Ayyanthole, Thrissur 680003</p>
-                        <p class="mt-4">
-                          <a href="tel:+917356111128" class="block hover:underline">+91 73561 11128</a>
-                          <a href="mailto:info@avanzosolutions.in" class="block hover:underline">info@avanzosolutions.in</a>
-                        </p>
-                      </div>
-                  
-                      <!-- Find Us Here -->
-                      <div class="text-center">
-                    
-                        <!-- Cyber Logo -->
-                        <img src="assets/cyber.png" alt="Cyber Logo" class="w-24 h-20 mx-auto mb-4">
-                    
-                        <!-- <button class="px-6 md:px-8 py-3 md:py-4 bg-secondary text-white rounded-lg hover:bg-tertiary transition-colors">
-                            Subscribe Now / 
-                        </button> -->
-                        <h3 class="text-lg font-semibold mb-4">Download CyberHulk</h3>
-      
-                    
-                        <!-- Scanner Image -->
-                        <img src="assets/scan.png" alt="Scanner" class="w-24 h-24 mx-auto mt-4">
-                    </div>
-                    
-                  </footer>
-                  
-                  <div class="w-full h-10 flex justify-center items-center bg-[#d191af] text-center text-sm text-gray-200 mt-0 mb-0">
-                    <p>
-                      A unit of Avanzo Cyber Solutions | Designed by
-                      <a href="https://avanzodesign.in" class="hover:underline text-white">avanzodesign.in</a>
-                    </p>
-                  </div>
-          
-    
+          <!-- Newsletter Thumbnail 2 (Larger) -->
+          <div class=" rounded-md overflow-hidden shadow-md transform scale-110 relative z-10 flex-shrink-0 w-1/3 p-2">
+            <img src="assets/new2.png" alt="Newsletter Thumbnail 2" class="w-[90%] block">
+          </div>
+          <!-- Newsletter Thumbnail 3 -->
+          <div class="rounded-md overflow-hidden shadow-md flex-shrink-0 w-1/3 p-2">
+            <img src="assets/news3.png" alt="Newsletter Thumbnail 3" class="w-[90%] block">
+          </div>
+          <!-- Repeat the same thumbnails for the slider effect -->
+          <div class=" rounded-md overflow-hidden shadow-md flex-shrink-0 w-1/3 p-2">
+            <img src="assets/news3.png" alt="Newsletter Thumbnail 3" class="w-[90%] block">
+          </div>
+          <div class="rounded-md overflow-hidden shadow-md transform scale-110 relative z-10 flex-shrink-0 w-1/3 p-2">
+            <img src="assets/new2.png" alt="Newsletter Thumbnail 2" class="w-[90%] block">
+          </div>
+          <div class=" rounded-md overflow-hidden shadow-md flex-shrink-0 w-1/3 p-2">
+            <img src="assets/new1.png" alt="Newsletter Thumbnail 4" class="w-[90%] block">
+          </div>
+        </div>
+  
+        <!-- Pagination -->
+        <div class="flex justify-center items-center space-x-4 mt-8">
+          <button id="prev-button" class="bg-pink-500 rounded-full w-2 h-2 hover:bg-pink-600 focus:outline-none"></button>
+          <button id="next-button" class="bg-gray-500 rounded-full w-2 h-2 hover:bg-gray-600 focus:outline-none"></button>
+        </div>
+      </div>
+    </div>
+  </section>
+<script>document.addEventListener('DOMContentLoaded', function () {
+  const thumbnailsContainer = document.getElementById('thumbnails-container');
+  const prevButton = document.getElementById('prev-button');
+  const nextButton = document.getElementById('next-button');
+  
+  let scrollPosition = 0;
+  const thumbnailWidth = thumbnailsContainer.clientWidth / 3; // Width of one thumbnail
 
-    
+  // Get the total scrollable width of the container
+  const totalWidth = thumbnailsContainer.scrollWidth;
+
+  // Auto-scroll functionality
+  const autoScroll = setInterval(() => {
+    scrollPosition += thumbnailWidth * 3; // Scroll by 3 thumbnails (one row)
+    if (scrollPosition >= totalWidth) {
+      scrollPosition = 0; // Reset to the first row
+    }
+    thumbnailsContainer.style.transform = `translateX(-${scrollPosition}px)`;
+  }, 3000); // Adjust the interval (in milliseconds) as needed
+
+  // Next button click
+  nextButton.addEventListener('click', () => {
+    scrollPosition += thumbnailWidth * 2; // Scroll by 3 thumbnails (one row)
+    if (scrollPosition >= totalWidth) {
+      scrollPosition = 0; // Reset to the first row
+    }
+    thumbnailsContainer.style.transform = `translateX(-${scrollPosition}px)`;
+  });
+
+  // Previous button click
+  prevButton.addEventListener('click', () => {
+    scrollPosition -= thumbnailWidth * 3; // Scroll back by 3 thumbnails (one row)
+    if (scrollPosition < 0) {
+      scrollPosition = totalWidth - thumbnailWidth * 3; // Go to the last row
+    }
+    thumbnailsContainer.style.transform = `translateX(-${scrollPosition}px)`;
+  });
+});
+</script>  
+  </script>
+          
+
+<footer id="contact" class="bg-[#9f6496] text-white py-8 z-19">
+              <div class="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-4 px-4">
+                <!-- Quick Links -->
+                <div>
+                  <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                  <ul class="space-y-2">
+                    <li><a href="index.html" class="hover:underline">Home</a></li>
+                    <li><a href="courses.html" class="hover:underline">Courses</a></li>
+                    <li><a href="Announcement.html" class="hover:underline">Announcement</a></li>
+                    <li><a href="https://lms.avanzoacademy.in" class="hover:underline">Virtual Centre</a></li>
+                    <li><a href="industry.html" class="hover:underline">Industry</a></li>
+                    <li><a href="#contact" class="hover:underline">Contact</a></li>
+                  </ul>
+                  <div class="flex items-center gap-4 mt-4">
+                    <!-- Social Media Icons -->
+                    <a href="https://facebook.com" target="_blank" class="text-white hover:text-black">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 5.1 3.84 9.3 8.77 9.95v-7.03H8.69v-2.92h2.08V9.6c0-2.07 1.23-3.22 3.11-3.22.9 0 1.85.16 1.85.16v2.04h-1.04c-1.03 0-1.34.64-1.34 1.29v1.54h2.28l-.36 2.92h-1.92v7.03C18.16 21.3 22 17.1 22 12z" />
+                      </svg>
+                    </a>
+                    <a href="https://twitter.com" target="_blank" class="text-white hover:text-black">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M22.46 6c-.77.35-1.6.59-2.46.7a4.18 4.18 0 0 0 1.84-2.3 8.28 8.28 0 0 1-2.63 1 4.12 4.12 0 0 0-7.11 3.74 11.67 11.67 0 0 1-8.47-4.3 4.12 4.12 0 0 0 1.28 5.49 4.1 4.1 0 0 1-1.86-.51v.05a4.12 4.12 0 0 0 3.3 4 4.12 4.12 0 0 1-1.86.07 4.12 4.12 0 0 0 3.84 2.85 8.28 8.28 0 0 1-5.12 1.77c-.33 0-.65-.02-.97-.05a11.67 11.67 0 0 0 6.29 1.85c7.55 0 11.67-6.26 11.67-11.67v-.53c.8-.58 1.5-1.3 2.05-2.13z" />
+                      </svg>
+                    </a>
+                    <a href="https://instagram.com" target="_blank" class="text-white hover:text-black">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M7.75 2h8.5C19.15 2 21 3.85 21 6.25v8.5c0 2.4-1.85 4.25-4.25 4.25h-8.5C3.85 19 2 17.15 2 14.75v-8.5C2 3.85 3.85 2 6.25 2zm5.25 4c-2.79 0-5 2.21-5 5s2.21 5 5 5 5-2.21 5-5-2.21-5-5-5zm-1.68 5c0-.93.75-1.68 1.68-1.68.93 0 1.68.75 1.68 1.68s-.75 1.68-1.68 1.68c-.93 0-1.68-.75-1.68-1.68zm6.18-4.53c.41 0 .75-.34.75-.75s-.34-.75-.75-.75-.75.34-.75.75.34.75.75.75z" />
+                      </svg>
+                    </a>
+                    <a href="https://youtube.com" target="_blank" class="text-white hover:text-black">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M10 15l5.2-3-5.2-3z"></path>
+                        <path d="M21.6 7.2s-.2-1.5-.8-2.2c-.7-.9-1.5-1-3.2-1.1C15.2 4 12 4 12 4s-3.2 0-5.6.2c-1.7.1-2.5.2-3.2 1.1-.6.7-.8 2.2-.8 2.2s-.2 1.8-.2 3.6v1.6c0 1.8.2 3.6.2 3.6s.2 1.5.8 2.2c.7.9 1.5 1 3.2 1.1 2.4.2 5.6.2 5.6.2s3.2 0 5.6-.2c1.7-.1 2.5-.2 3.2-1.1.6-.7.8-2.2.8-2.2s.2-1.8.2-3.6v-1.6c0-1.8-.2-3.6-.2-3.6z"></path>
+                      </svg>
+                    </a>
+                    
+                  </div>
+                </div> 
+
+                <div class="flex w-[200px]  flex-col align-center">
+                  <img src="assets/girl.png" alt="">
+                  <div class="px-3 py-2 bg-pink-400/50 rounded-2xl">
+                  <p class="text-center text-white font-semibold">Name</p>
+                  <p class="text-center text-white">Front Desk Staff</p>
+                  </div>  
+                </div>
+            
+                <!-- Contact -->
+                <div>
+                  <h3 class="text-lg font-semibold mb-4">Contact</h3>
+                  <p>AVANZO CYBER INSTITUTE<br>NRA – 89, Whitefield,<br>Puthurkkara, Ayyanthole, Thrissur 680003</p>
+                  <p class="mt-4">
+                    <a href="tel:+917356111128" class="block hover:underline">+91 73561 11128</a>
+                    <a href="mailto:info@avanzosolutions.in" class="block hover:underline">info@avanzosolutions.in</a>
+                  </p>
+                </div>
+            
+                <!-- Find Us Here -->
+                <div class="text-center">
+              
+                  <!-- Cyber Logo -->
+                  <img src="assets/cyber.png" alt="Cyber Logo" class="w-24 h-20 mx-auto mb-4">
+              
+                  <!-- <button class="px-6 md:px-8 py-3 md:py-4 bg-secondary text-white rounded-lg hover:bg-tertiary transition-colors">
+                      Subscribe Now / 
+                  </button> -->
+                  <h3 class="text-lg font-semibold mb-4">Download CyberHulk</h3>
+
+              
+                  <!-- Scanner Image -->
+                  <img src="assets/scan.png" alt="Scanner" class="w-24 h-24 mx-auto mt-4">
+              </div>
+              
+            </footer>
+            
+            <div class="w-full h-10 flex justify-center items-center bg-[#d191af] text-center text-sm text-gray-200 mt-0 mb-0">
+              <p>
+                A unit of Avanzo Cyber Solutions | Designed by
+                <a href="https://avanzodesign.in" class="hover:underline text-white">avanzodesign.in</a>
+              </p>
+            </div>
 </body>
 </html>
